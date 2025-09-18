@@ -7,12 +7,14 @@
   <meta name="description" content="Personal website of Lucian Irimie — Agile Delivery Leader | Digital Transformation in Retail, Payments & Travel, based in Dublin." />
 
   <!-- Social share (nice preview on LinkedIn, etc.) -->
-  <meta property="og:title" content="Personal website of Lucian Irimie — Agile Delivery Leader | Digital Transformation in Retail, Payments & Travel, based in Dublin." />
-  <meta property="og:description" content="Background, and ways to get in touch." />
+  <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader in Dublin" />
+  <meta property="og:description" content="Background and ways to get in touch." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lucianRME.github.io" />
+  <meta property="og:url" content="https://lucianrme.github.io" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/9919?s=400" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/favicon.ico">
 
   <style>
     :root { --max: 900px; }
@@ -26,6 +28,14 @@
     section { margin-top: 28px; }
     ul { padding-left: 1.2rem; }
     footer { margin: 40px 0 24px; font-size: 0.9rem; opacity: 0.8; }
+    /* Form styles */
+    form { max-width: 520px; margin-top: 20px }
+    form div { margin: 12px 0 }
+    label { display:block; font-weight:600; margin-bottom:6px }
+    input, textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; box-sizing:border-box }
+    button { background:#0366d6; color:#fff; border:0; padding:10px 14px; border-radius:8px; cursor:pointer }
+    button:hover { filter:brightness(0.95) }
+    #form-status { font-size:0.95rem; opacity:0.9 }
   </style>
 </head>
 <body>
@@ -44,39 +54,85 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Not just Agile by the book, I make it practical. 
-Agile Delivery Leader with over a decade in Retail, Payments & Travel Tech. 
-
-I save costs and accelerate results without compromising quality by focusing on speed, predictability, and multi-team delivery. Have successfully implemented Agile, SAFe, DevOps and Shift-Left models..</p>
+    <p>Not just Agile by the book, I make it practical.
+    Agile Delivery Leader with over a decade in Retail, Payments &amp; Travel Tech.
+    I save costs and accelerate results without compromising quality by focusing on speed, predictability, and multi-team delivery. Have successfully implemented Agile, SAFe, DevOps and Shift-Left models.</p>
   </section>
 
   <section id="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/movngale" method="POST">
-    <label>
-      Your name:
-      <input type="text" name="name" required>
-    </label>
-    <br><br>
-    <label>
-      Your email:
-      <input type="email" name="email" required>
-    </label>
-    <br><br>
-    <label>
-      Your message:
-      <textarea name="message" rows="5" required></textarea>
-    </label>
-    <br><br>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/movngale" method="POST">
+      <!-- Nice email subject when you receive it -->
+      <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
+      <!-- Optional: redirect to a thank-you page after submit -->
+      <!-- <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html"> -->
 
+      <!-- Honeypot (catches bots; humans won't see it) -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+
+      <div>
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
+      </div>
+
+      <div>
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <!-- Optional GDPR-style consent (recommended in EU) -->
+      <div>
+        <label style="font-weight: normal">
+          <input type="checkbox" name="consent" required>
+          I agree to be contacted about my message.
+        </label>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Inline success/error message without redirect -->
+    <p id="form-status" aria-live="polite" style="margin-top:12px;"></p>
+  </section>
 
   <footer>
     © <span id="y"></span> Lucian Irimie
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Ajax submit for Formspree (keeps user on the page and shows a message)
+    const form = document.querySelector('form[action="https://formspree.io/f/movngale"]');
+    const statusEl = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const r = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (r.ok) {
+          form.reset();
+          statusEl.textContent = "Thanks! Your message has been sent.";
+        } else {
+          const err = await r.json().catch(() => ({}));
+          statusEl.textContent = err.errors?.[0]?.message || "Oops, something went wrong. Please try again.";
+        }
+      } catch {
+        statusEl.textContent = "Network error — please try again.";
+      }
+    });
+  </script>
 </body>
 </html>
