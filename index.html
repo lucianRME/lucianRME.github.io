@@ -4,15 +4,14 @@
   <meta charset="utf-8" />
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-10FCSZC4RZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10FCSZC4RZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-10FCSZC4RZ');
+  </script>
 
-  gtag('config', 'G-10FCSZC4RZ');
-</script>
-  
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lucian Irimie – Agile Delivery Leader in Dublin</title>
   <meta name="description" content="Personal website of Lucian Irimie — Agile Delivery Leader | Digital Transformation in Retail, Payments & Travel, based in Dublin." />
@@ -26,63 +25,89 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <style>
     :root { --max: 900px; }
     html { color-scheme: light dark; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif; max-width: var(--max); margin: 40px auto; padding: 0 16px; line-height: 1.6; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+      max-width: var(--max);
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.6;
+    }
     header { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     img { border-radius: 50%; }
     nav a, a { color: #0366d6; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .btn { display: inline-block; border: 1px solid #ccc; border-radius: 10px; padding: 10px 14px; }
+    .btn {
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
     section { margin-top: 28px; }
     ul { padding-left: 1.2rem; }
     footer { margin: 40px 0 24px; font-size: 0.9rem; opacity: 0.8; }
+
     /* Form styles */
-    form { max-width: 520px; margin-top: 20px }
-    form div { margin: 12px 0 }
-    label { display:block; font-weight:600; margin-bottom:6px }
-    input, textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; box-sizing:border-box }
-    button { background:#0366d6; color:#fff; border:0; padding:10px 14px; border-radius:8px; cursor:pointer }
-    button:hover { filter:brightness(0.95) }
-    #form-status { font-size:0.95rem; opacity:0.9 }
+    form { max-width: 520px; margin-top: 20px; }
+    form div { margin: 12px 0; }
+    label { display:block; font-weight:600; margin-bottom:6px; }
+    input, textarea {
+      width:100%;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      box-sizing:border-box;
+    }
+    button {
+      background:#0366d6;
+      color:#fff;
+      border:0;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+    button:hover { filter:brightness(0.95); }
+    #form-status { font-size:0.95rem; opacity:0.9; }
   </style>
 </head>
+
 <body>
   <header>
-    <!-- Replace the avatar URL with your own image when you have one -->
-  <div style="width:160px; height:160px; overflow:hidden; border-radius:50%;">
-  <img src="Lucian%20Irimie.jpeg" 
-       alt="Portrait of Lucian Irimie" 
-       style="width:100%; height:100%; object-fit:cover;">
-</div>
+    <div style="width:160px; height:160px; overflow:hidden; border-radius:50%;">
+      <img src="Lucian%20Irimie.jpeg" alt="Portrait of Lucian Irimie"
+           style="width:100%; height:100%; object-fit:cover;">
+    </div>
     <div>
       <h1>Lucian Irimie</h1>
       <p>Agile Delivery Leader • Dublin • Available for collaborations</p>
       <p>
-        <a class="btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-        <!-- Add more links if you want: GitHub, Email, CV -->
+        <a class="btn"
+           href="https://www.linkedin.com/in/lucianirimie/"
+           target="_blank" rel="noopener noreferrer"
+           id="linkedin-btn">LinkedIn Profile</a>
       </p>
     </div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Not just Agile by the book, I make it practical.
-    Agile Delivery Leader with over a decade in Retail, Payments &amp; Travel Tech.
-    I save costs and accelerate results without compromising quality by focusing on speed, predictability, and multi-team delivery. Have successfully implemented Agile, SAFe, DevOps and Shift-Left models.</p>
+    <p>
+      Not just Agile by the book, I make it practical.
+      Agile Delivery Leader with over a decade in Retail, Payments &amp; Travel Tech.
+      I save costs and accelerate results without compromising quality by focusing on
+      speed, predictability, and multi-team delivery. Have successfully implemented
+      Agile, SAFe, DevOps and Shift-Left models.
+    </p>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/movngale" method="POST">
-      <!-- Nice email subject when you receive it -->
-      <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
-      <!-- Optional: redirect to a thank-you page after submit -->
-      <!-- <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html"> -->
 
-      <!-- Honeypot (catches bots; humans won't see it) -->
+    <form action="https://formspree.io/f/movngale" method="POST" id="contact-form">
+      <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <div>
@@ -100,7 +125,6 @@
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
 
-      <!-- Optional GDPR-style consent (recommended in EU) -->
       <div>
         <label style="font-weight: normal">
           <input type="checkbox" name="consent" required>
@@ -111,7 +135,6 @@
       <button type="submit">Send Message</button>
     </form>
 
-    <!-- Inline success/error message without redirect -->
     <p id="form-status" aria-live="polite" style="margin-top:12px;"></p>
   </section>
 
@@ -119,10 +142,11 @@
     © <span id="y"></span> Lucian Irimie
   </footer>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Ajax submit for Formspree (keeps user on the page and shows a message)
+    // Ajax submit for Formspree
     const form = document.querySelector('form[action="https://formspree.io/f/movngale"]');
     const statusEl = document.getElementById('form-status');
 
@@ -149,5 +173,11 @@
       }
     });
   </script>
-</body>
-</html>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // LinkedIn click
+      const linkedin = document.getElementById('linkedin-btn');
+      if (linkedin) {
+        linkedin.addEventListener('click', function() {
+          gtag('event', 'clic
