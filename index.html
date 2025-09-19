@@ -112,7 +112,7 @@
     a:hover{text-decoration:underline}
 
     @media(max-width:800px){
-      /* NEW — disable sticky on small screens */
+      /* Mobile: remove sticky effect */
       header{
         position: static !important;
         top: auto !important;
@@ -123,6 +123,12 @@
       .hero{grid-template-columns:1fr;justify-items:start}
       .grid{grid-template-columns:1fr}
       .span-4{grid-column:auto}
+
+      /* 📱 Mobile form improvements */
+      form{width:100%}
+      .field{margin:18px 0}
+      input,textarea{font-size:16px;padding:14px 16px;border-radius:10px}
+      button[type=submit]{width:100%;padding:14px;font-size:16px}
     }
   </style>
 </head>
