@@ -43,6 +43,8 @@
       --shadow: 0 4px 16px rgba(0,0,0,.1);
       --radius: 16px;
       --max: 900px;
+      --input-bg: #ffffff;
+      --input-border: var(--stroke);
     }
     @media (prefers-color-scheme: dark){
       :root {
@@ -54,6 +56,8 @@
         --primary-ink: #202124;
         --stroke: #3c4043;
         --shadow: 0 6px 20px rgba(0,0,0,.4);
+        --input-bg: #303134;
+        --input-border: #4b4f54;
       }
     }
 
@@ -94,65 +98,77 @@
     .project h3{margin:.2rem 0;font-size:18px}
     .project small{color:var(--muted)}
 
-    /* Form */
+    /* ---- Form: mobile-safe, dark/light consistent ---- */
     form{max-width:520px;margin-top:8px}
     .field{margin:12px 0}
     label{display:block;font-weight:600;margin-bottom:6px}
 
     input,textarea{
-      width:100%;
-      padding:14px 16px;
-      border-radius:12px;
-      font-size:16px; /* prevents iOS zoom */
-      border:1px solid var(--stroke);
-      background:var(--bg);
+      appearance:none;
+      -webkit-appearance:none;
+      background-clip:padding-box;
+      background:var(--input-bg);
       color:var(--text);
+      border:1px solid var(--input-border);
+      border-radius:12px;
+      padding:14px 16px;
+      font-size:16px;
       box-shadow:none;
+      width:100%;
     }
     input:focus,textarea:focus{
       outline:none;
       border-color:var(--primary);
       box-shadow:0 0 0 3px rgba(26,115,232,.25);
     }
-
-    button[type=submit]{
-      background:var(--primary);color:var(--primary-ink);
-      border:0;padding:12px 16px;border-radius:12px;
-      font-weight:700;cursor:pointer;box-shadow:var(--shadow)
+    input:-webkit-autofill,
+    textarea:-webkit-autofill{
+      -webkit-text-fill-color:var(--text);
+      -webkit-box-shadow:0 0 0 1000px var(--input-bg) inset !important;
+      box-shadow:0 0 0 1000px var(--input-bg) inset !important;
+      caret-color:var(--text);
     }
-    button[type=submit]:hover{filter:brightness(0.95)}
-
-    #form-status{margin-top:10px;color:var(--muted);font-size:.95rem}
-
-    /* Checkbox */
-    input[type="checkbox"] {
+    input[type="checkbox"]{
       width:18px;height:18px;
       accent-color:var(--primary);
       vertical-align:middle;
     }
     .field label,
-    label[style*="font-weight:normal"] {
+    label[style*="font-weight:normal"]{
       display:flex;align-items:center;gap:10px;
     }
 
+    /* Submit button */
+    button[type=submit]{
+      background:var(--primary);
+      color:var(--primary-ink);
+      border:0;
+      padding:16px 20px;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+      font-size:17px;
+      width:100%;
+      display:block;
+      box-shadow:0 4px 12px rgba(26,115,232,.3);
+      transition:transform .1s ease, box-shadow .2s ease;
+    }
+    button[type=submit]:active{
+      transform:scale(.98);
+      box-shadow:0 2px 6px rgba(26,115,232,.3);
+    }
+
+    #form-status{margin-top:10px;color:var(--muted);font-size:.95rem}
     footer{text-align:center;margin:40px 0 24px;color:var(--muted);font-size:.95rem}
 
     a{color:var(--primary);text-decoration:none}
     a:hover{text-decoration:underline}
 
     @media(max-width:800px){
-      /* Mobile: remove sticky effect */
-      header{
-        position: static !important;
-        top: auto !important;
-        backdrop-filter: none !important;
-        background: var(--bg);
-      }
       .hero{grid-template-columns:1fr;justify-items:start}
       .grid{grid-template-columns:1fr}
       .span-4{grid-column:auto}
       .field{margin:18px 0}
-      button[type=submit]{width:100%;padding:14px;font-size:16px}
     }
   </style>
 </head>
@@ -176,12 +192,14 @@
   </header>
 
   <main class="container">
+    <!-- About -->
     <section class="card">
       <h2>About Me</h2>
       <p>I help organisations accelerate delivery without compromising quality. Over a decade in Retail Technology, Payments (Fintech) and Travel Tech—leading Agile transformation, Scaled Agile (SAFe), Agile coaching and DevOps & CI/CD initiatives. I work with cross-functional teams and stakeholders to improve lead time and cycle time, align OKRs and roadmaps, and embed quality engineering and test automation with a shift-left mindset.</p>
       <p style="margin-top:8px;color:var(--muted)">Focus: Scaled Agile (SAFe), Scrum/Kanban, DevOps & CI/CD, test automation, OKRs and stakeholder management — with an interest in program and delivery management.</p>
     </section>
 
+    <!-- Projects -->
     <section>
       <h2>Selected Projects</h2>
       <div class="grid">
@@ -192,7 +210,7 @@
           <ul>
             <li>Lead time ↓ 40% through Agile coaching, Kanban/WIP control and portfolio delivery practices.</li>
             <li>Shifted from waterfall to sprint-based release cadence; improved stakeholder visibility.</li>
-            <li>Led crossfunctional teams consisting primarily of developers and a few QA (25+), improved cycle time and release predictability.</li>
+            <li>Led crossfunctional teams (25+) and improved release predictability.</li>
           </ul>
         </article>
         <article class="card project span-4">
@@ -216,6 +234,7 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="card">
       <h2>Contact</h2>
       <form action="https://formspree.io/f/movngale" method="POST" id="contact-form">
@@ -250,18 +269,3 @@
   <script>
     document.getElementById('y').textContent=new Date().getFullYear();
     const form=document.getElementById('contact-form');
-    const statusEl=document.getElementById('form-status');
-    form.addEventListener('submit',async e=>{
-      e.preventDefault();
-      const data=new FormData(form);
-      try{
-        const r=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
-        if(r.ok){form.reset();statusEl.textContent="Thanks! Your message has been sent.";}
-        else{statusEl.textContent="Oops, something went wrong.";}
-      }catch{statusEl.textContent="Network error — please try again.";}
-    });
-    document.getElementById('linkedin-btn').addEventListener('click',()=>{gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});});
-    form.addEventListener('submit',()=>{gtag('event','submit_form',{event_category:'engagement',event_label:'Contact Form'});});
-  </script>
-</body>
-</html>
