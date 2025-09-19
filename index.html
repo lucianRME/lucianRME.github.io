@@ -13,190 +13,217 @@
   </script>
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lucian Irimie – Agile Delivery Leader in Dublin</title>
-  <meta name="description" content="Personal website of Lucian Irimie — Agile Delivery Leader | Digital Transformation in Retail, Payments & Travel, based in Dublin." />
+  <title>Lucian Irimie – Agile Delivery Leader</title>
+  <meta name="description" content="Lucian Irimie — Agile Delivery Leader | Driving Digital Delivery in Retail, Payments & Travel, based in Dublin." />
 
-  <!-- Social share (nice preview on LinkedIn, etc.) -->
-  <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader in Dublin" />
-  <meta property="og:description" content="Background and ways to get in touch." />
+  <!-- OG -->
+  <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader" />
+  <meta property="og:description" content="Background and contact details." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lucianrme.github.io" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/9919?s=400" />
-  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <style>
-    :root { --max: 900px; }
-    html { color-scheme: light dark; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
-      max-width: var(--max);
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.6;
-    }
-    header { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    img { border-radius: 50%; }
-    nav a, a { color: #0366d6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .btn {
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px 14px;
-    }
-    section { margin-top: 28px; }
-    ul { padding-left: 1.2rem; }
-    footer { margin: 40px 0 24px; font-size: 0.9rem; opacity: 0.8; }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-    /* Form styles */
-    form { max-width: 520px; margin-top: 20px; }
-    form div { margin: 12px 0; }
-    label { display:block; font-weight:600; margin-bottom:6px; }
-    input, textarea {
-      width:100%;
-      padding:10px;
-      border:1px solid #ccc;
-      border-radius:8px;
-      box-sizing:border-box;
+  <style>
+    /* Google Material-style colors */
+    :root {
+      --bg: #ffffff;
+      --card: #f8f9fa;
+      --text: #202124;
+      --muted: #5f6368;
+      --primary: #1a73e8;
+      --primary-ink: #ffffff;
+      --stroke: #dadce0;
+      --shadow: 0 4px 16px rgba(0,0,0,.1);
+      --radius: 16px;
+      --max: 900px;
     }
-    button {
-      background:#0366d6;
-      color:#fff;
-      border:0;
-      padding:10px 14px;
-      border-radius:8px;
-      cursor:pointer;
+    @media (prefers-color-scheme: dark){
+      :root {
+        --bg: #202124;
+        --card: #303134;
+        --text: #e8eaed;
+        --muted: #9aa0a6;
+        --primary: #8ab4f8;
+        --primary-ink: #202124;
+        --stroke: #3c4043;
+        --shadow: 0 6px 20px rgba(0,0,0,.4);
+      }
     }
-    button:hover { filter:brightness(0.95); }
-    #form-status { font-size:0.95rem; opacity:0.9; }
+
+    html{color-scheme:light dark;scroll-behavior:smooth}
+    body{
+      margin:0;font-family:Inter,system-ui,sans-serif;line-height:1.65;
+      background:var(--bg);color:var(--text)
+    }
+    .container{max-width:var(--max);margin:0 auto;padding:28px 18px 46px}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(255,255,255,.85);
+      border-bottom:1px solid var(--stroke);
+    }
+    @media(prefers-color-scheme:dark){header{background:rgba(32,33,36,.9)}}
+    .hero{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;padding:22px 0}
+    .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;
+      border:2px solid var(--stroke);box-shadow:var(--shadow)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-family:Poppins,Inter;font-size:34px;margin:0 0 4px}
+    .subtitle{color:var(--muted);margin:0 0 14px}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;
+      border-radius:999px;font-weight:700;text-decoration:none;transition:transform .12s ease}
+    .btn-primary{background:var(--primary);color:var(--primary-ink);box-shadow:var(--shadow)}
+    .btn-ghost{border:1px solid var(--stroke);color:var(--text)}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* Sections */
+    section{margin-top:28px}
+    .card{background:var(--card);border:1px solid var(--stroke);
+      border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    h2{font-family:Poppins,Inter;font-size:24px;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .span-4{grid-column:span 4}
+    .project h3{margin:.2rem 0;font-size:18px}
+    .project small{color:var(--muted)}
+
+    /* Form */
+    form{max-width:520px;margin-top:8px}
+    .field{margin:12px 0}
+    label{display:block;font-weight:600;margin-bottom:6px}
+    input,textarea{
+      width:100%;padding:12px 14px;border-radius:12px;
+      border:1px solid var(--stroke);background:rgba(255,255,255,.02);color:var(--text)
+    }
+    input:focus,textarea:focus{border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(26,115,232,.25)}
+    button[type=submit]{background:var(--primary);color:var(--primary-ink);border:0;
+      padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+    #form-status{margin-top:10px;color:var(--muted);font-size:.95rem}
+    footer{text-align:center;margin:40px 0 24px;color:var(--muted);font-size:.95rem}
+
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr;justify-items:start}
+      .grid{grid-template-columns:1fr}
+      .span-4{grid-column:auto}
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <div style="width:160px; height:160px; overflow:hidden; border-radius:50%;">
-      <img src="Lucian%20Irimie.jpeg" alt="Portrait of Lucian Irimie"
-           style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div>
-      <h1>Lucian Irimie</h1>
-      <p>Agile Delivery Leader • Dublin • Available for collaborations</p>
-      <p>
-        <a class="btn"
-           href="https://www.linkedin.com/in/lucianirimie/"
-           target="_blank" rel="noopener noreferrer"
-           id="linkedin-btn">LinkedIn Profile</a>
-      </p>
+    <div class="container">
+      <div class="hero">
+        <div class="avatar">
+          <img src="Lucian%20Irimie.jpeg" alt="Portrait of Lucian Irimie">
+        </div>
+        <div>
+          <h1>Lucian Irimie</h1>
+          <p class="subtitle">Agile Delivery Leader • Dublin</p>
+          <a class="btn btn-primary" id="linkedin-btn"
+             href="https://www.linkedin.com/in/lucianirimie/"
+             target="_blank" rel="noopener">LinkedIn Profile</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Not just Agile by the book, I make it practical.
-      Agile Delivery Leader with over a decade in Retail, Payments &amp; Travel Tech.
-      I save costs and accelerate results without compromising quality by focusing on
-      speed, predictability, and multi-team delivery. Have successfully implemented
-      Agile, SAFe, DevOps and Shift-Left models.
-    </p>
-  </section>
+  <main class="container">
+    <section class="card">
+      <h2>About Me</h2>
+      <p>I help organisations accelerate delivery without compromising quality.  
+      Over a decade of experience in Retail, Payments and Travel Tech — leading Agile, SAFe, DevOps and Shift-Left initiatives.</p>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-
-    <form action="https://formspree.io/f/movngale" method="POST" id="contact-form">
-      <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-      <div>
-        <label for="name">Your name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required>
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card project span-4">
+          <h3>Retail Agile Transformation</h3>
+          <small>Delivery Lead</small>
+          <p>Transitioned a multi-team portfolio from waterfall to agile.</p>
+          <ul>
+            <li>Lead time ↓ 40%</li>
+            <li>Sprint-based release cadence</li>
+          </ul>
+        </article>
+        <article class="card project span-4">
+          <h3>Quality Engineering Strategy</h3>
+          <small>Program Lead</small>
+          <p>Implemented risk-based testing and embedded quality early.</p>
+          <ul>
+            <li>P1/P2 incidents ↓ 40%</li>
+            <li>Manual testing effort ↓ 80%</li>
+          </ul>
+        </article>
+        <article class="card project span-4">
+          <h3>Payments Platforms</h3>
+          <small>Agile Delivery & QA Manager</small>
+          <p>Led global teams and automation initiatives.</p>
+          <ul>
+            <li>Testing costs ↓ 10%</li>
+            <li>Teams of 30+ engineers</li>
+          </ul>
+        </article>
       </div>
+    </section>
 
-      <div>
-        <label for="email">Your email</label>
-        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
-      </div>
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/movngale" method="POST" id="contact-form">
+        <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-      <div>
-        <label for="message">Your message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="field">
+          <label style="font-weight:normal">
+            <input type="checkbox" name="consent" required> I agree to be contacted.
+          </label>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="form-status" aria-live="polite"></p>
+    </section>
+  </main>
 
-      <div>
-        <label style="font-weight: normal">
-          <input type="checkbox" name="consent" required>
-          I agree to be contacted about my message.
-        </label>
-      </div>
+  <footer>© <span id="y"></span> Lucian Irimie</footer>
 
-      <button type="submit">Send Message</button>
-    </form>
-
-    <p id="form-status" aria-live="polite" style="margin-top:12px;"></p>
-  </section>
-
-  <footer>
-    © <span id="y"></span> Lucian Irimie
-  </footer>
-
-  <!-- ===== SCRIPTS ===== -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Ajax submit for Formspree
-    const form = document.querySelector('form[action="https://formspree.io/f/movngale"]');
-    const statusEl = document.getElementById('form-status');
-
-    form.addEventListener('submit', async (e) => {
+    document.getElementById('y').textContent=new Date().getFullYear();
+    const form=document.getElementById('contact-form');
+    const statusEl=document.getElementById('form-status');
+    form.addEventListener('submit',async e=>{
       e.preventDefault();
-      const data = new FormData(form);
-
-      try {
-        const r = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (r.ok) {
-          form.reset();
-          statusEl.textContent = "Thanks! Your message has been sent.";
-        } else {
-          const err = await r.json().catch(() => ({}));
-          statusEl.textContent = err.errors?.[0]?.message || "Oops, something went wrong. Please try again.";
-        }
-      } catch {
-        statusEl.textContent = "Network error — please try again.";
-      }
+      const data=new FormData(form);
+      try{
+        const r=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
+        if(r.ok){form.reset();statusEl.textContent="Thanks! Your message has been sent.";}
+        else{statusEl.textContent="Oops, something went wrong.";}
+      }catch{statusEl.textContent="Network error — please try again.";}
     });
+    document.getElementById('linkedin-btn').addEventListener('click',()=>{gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});});
+    form.addEventListener('submit',()=>{gtag('event','submit_form',{event_category:'engagement',event_label:'Contact Form'});});
   </script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // LinkedIn click
-    const linkedin = document.getElementById('linkedin-btn');
-    if (linkedin) {
-      linkedin.addEventListener('click', function() {
-        gtag('event', 'click_linkedin', {
-          event_category: 'engagement',
-          event_label: 'LinkedIn Profile Button'
-        });
-      });
-    }
-
-    // Contact form submit
-    const form = document.getElementById('contact-form');
-    if (form) {
-      form.addEventListener('submit', function() {
-        gtag('event', 'submit_form', {
-          event_category: 'engagement',
-          event_label: 'Contact Form'
-        });
-      });
-    }
-  });
-</script>
-
+</body>
+</html>
