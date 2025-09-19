@@ -139,4 +139,55 @@
     <section class="card">
       <h2>About Me</h2>
       <p>I help organisations accelerate delivery without compromising quality. Over a decade in Retail Technology, Payments (Fintech) and Travel Tech—leading Agile transformation, Scaled Agile (SAFe), Agile coaching and DevOps & CI/CD initiatives.</p>
-      <p
+      <p style="margin-top:8px;color:var(--muted)">Focus: SAFe, Scrum/Kanban, DevOps & CI/CD, test automation, OKRs, stakeholder management — with an interest in program and delivery management.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/movngale" method="POST" id="contact-form">
+        <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="field">
+          <label style="font-weight:normal">
+            <input type="checkbox" name="consent" required> I agree to be contacted.
+          </label>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="form-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Lucian Irimie</footer>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    const form=document.getElementById('contact-form');
+    const statusEl=document.getElementById('form-status');
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const data=new FormData(form);
+      try{
+        const r=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
+        if(r.ok){form.reset();statusEl.textContent="Thanks! Your message has been sent.";}
+        else{statusEl.textContent="Oops, something went wrong.";}
+      }catch{statusEl.textContent="Network error — please try again.";}
+    });
+    document.getElementById('linkedin-btn').addEventListener('click',()=>{gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});});
+    form.addEventListener('submit',()=>{gtag('event','submit_form',{event_category:'engagement',event_label:'Contact Form'});});
+  </script>
+</body>
+</html>
