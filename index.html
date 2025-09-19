@@ -175,9 +175,28 @@
   </script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // LinkedIn click
-      const linkedin = document.getElementById('linkedin-btn');
-      if (linkedin) {
-        linkedin.addEventListener('click', function() {
-          gtag('event', 'clic
+  document.addEventListener('DOMContentLoaded', function () {
+    // LinkedIn click
+    const linkedin = document.getElementById('linkedin-btn');
+    if (linkedin) {
+      linkedin.addEventListener('click', function() {
+        gtag('event', 'click_linkedin', {
+          event_category: 'engagement',
+          event_label: 'LinkedIn Profile Button'
+        });
+      });
+    }
+
+    // Contact form submit
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        gtag('event', 'submit_form', {
+          event_category: 'engagement',
+          event_label: 'Contact Form'
+        });
+      });
+    }
+  });
+</script>
+
