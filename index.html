@@ -30,6 +30,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT"></script>
+
   <style>
     :root {
       --bg: #ffffff;
@@ -63,7 +66,6 @@
     }
     .container{max-width:var(--max);margin:0 auto;padding:28px 18px 46px}
 
-    /* Header - not sticky anymore */
     header{
       background:var(--card);
       border-bottom:1px solid var(--stroke);
@@ -78,42 +80,25 @@
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;
       border-radius:999px;font-weight:700;text-decoration:none}
     .btn-primary{background:var(--primary);color:var(--primary-ink);box-shadow:var(--shadow)}
-    .btn-ghost{border:1px solid var(--stroke);color:var(--text)}
 
-    /* Sections */
     section{margin-top:28px}
     .card{background:var(--card);border:1px solid var(--stroke);
       border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
     h2{font-family:Poppins,Inter;font-size:24px;margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .span-4{grid-column:span 4}
-    .project h3{margin:.2rem 0;font-size:18px}
-    .project small{color:var(--muted)}
 
-    /* Form - improved mobile */
     form{max-width:520px;margin-top:8px}
     .field{margin:12px 0}
     label{display:block;font-weight:600;margin-bottom:6px}
     input,textarea{
       width:100%;padding:14px 16px;border-radius:12px;font-size:16px;
       border:1px solid var(--stroke);background:var(--bg);color:var(--text);
-      box-shadow:none;box-sizing:border-box
+      box-sizing:border-box
     }
-    input:focus,textarea:focus{border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(26,115,232,.25)}
-    input[type="checkbox"]{width:18px;height:18px;accent-color:var(--primary);vertical-align:middle}
     button[type=submit]{background:var(--primary);color:var(--primary-ink);border:0;
-      padding:14px 16px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);width:100%;font-size:16px}
+      padding:14px 16px;border-radius:12px;font-weight:700;cursor:pointer;
+      box-shadow:var(--shadow);width:100%;font-size:16px}
     #form-status{margin-top:10px;color:var(--muted);font-size:.95rem}
     footer{text-align:center;margin:40px 0 24px;color:var(--muted);font-size:.95rem}
-
-    a{color:var(--primary);text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    @media(max-width:800px){
-      .hero{grid-template-columns:1fr;justify-items:start}
-      .grid{grid-template-columns:1fr}
-      .span-4{grid-column:auto}
-    }
   </style>
 </head>
 
@@ -139,13 +124,12 @@
     <section class="card">
       <h2>About Me</h2>
       <p>I help organisations accelerate delivery without compromising quality. Over a decade in Retail Technology, Payments (Fintech) and Travel Tech—leading Agile transformation, Scaled Agile (SAFe), Agile coaching and DevOps & CI/CD initiatives.</p>
-      <p style="margin-top:8px;color:var(--muted)">Focus: SAFe, Scrum/Kanban, DevOps & CI/CD, test automation, OKRs, stakeholder management — with an interest in program and delivery management.</p>
     </section>
 
     <section id="contact" class="card">
       <h2>Contact</h2>
       <form action="https://formspree.io/f/movngale" method="POST" id="contact-form">
-        <input type="hidden" name="_subject" value="New message from lucianrme.github.io">
+        <input type="hidden" name="_subject" value="New message from lucianirimie.com">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="field">
@@ -177,17 +161,42 @@
     document.getElementById('y').textContent=new Date().getFullYear();
     const form=document.getElementById('contact-form');
     const statusEl=document.getElementById('form-status');
-    form.addEventListener('submit',async e=>{
+    const SITE_KEY="6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
+
+    form.addEventListener('submit',function(e){
       e.preventDefault();
-      const data=new FormData(form);
-      try{
-        const r=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
-        if(r.ok){form.reset();statusEl.textContent="Thanks! Your message has been sent.";}
-        else{statusEl.textContent="Oops, something went wrong.";}
-      }catch{statusEl.textContent="Network error — please try again.";}
+      statusEl.textContent="Sending…";
+
+      grecaptcha.ready(function(){
+        grecaptcha.execute(SITE_KEY,{action:'submit'}).then(async function(token){
+          const data=new FormData(form);
+          data.append('g-recaptcha-response',token);
+
+          try{
+            const r=await fetch(form.action,{
+              method:form.method,
+              body:data,
+              headers:{'Accept':'application/json'}
+            });
+            if(r.ok){
+              form.reset();
+              statusEl.textContent="Thanks! Your message has been sent.";
+            } else {
+              statusEl.textContent="Oops, something went wrong.";
+            }
+          }catch{
+            statusEl.textContent="Network error — please try again.";
+          }
+        });
+      });
     });
-    document.getElementById('linkedin-btn').addEventListener('click',()=>{gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});});
-    form.addEventListener('submit',()=>{gtag('event','submit_form',{event_category:'engagement',event_label:'Contact Form'});});
+
+    document.getElementById('linkedin-btn').addEventListener('click',()=>{
+      gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});
+    });
+    form.addEventListener('submit',()=>{
+      gtag('event','submit_form',{event_category:'engagement',event_label:'Contact Form'});
+    });
   </script>
 </body>
 </html>
