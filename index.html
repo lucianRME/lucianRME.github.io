@@ -122,16 +122,39 @@
     "name":"Lucian Irimie",
     "jobTitle":"Agile Delivery Leader",
     "url":"https://www.lucianirimie.com",
-    "sameAs":[
-      "https://www.linkedin.com/in/lucianirimie",
-      "https://github.com/lucianRME"
-    ],
     "image":"https://www.lucianirimie.com/Lucian%20Irimie.jpeg",
+    "description":"Agile Delivery Leader and GenAI practitioner based in Dublin, Ireland.",
+    "sameAs":[
+      "https://www.linkedin.com/in/lucianirimie/",
+      "https://github.com/lucianRME",
+      "https://www.credly.com/users/lucian-irimie.75845f88",
+      "https://skillsoft.digitalbadges.skillsoft.com/profile/lucianirimie411400/wallet"
+    ],
     "address":{
       "@type":"PostalAddress",
       "addressLocality":"Dublin",
       "addressCountry":"Ireland"
-    }
+    },
+    "alumniOf":[
+      {
+        "@type":"CollegeOrUniversity",
+        "name":"Rushford Business School",
+        "address":{"@type":"PostalAddress","addressCountry":"Switzerland"},
+        "educationalCredentialAwarded":"MBA (in progress)"
+      },
+      {
+        "@type":"CollegeOrUniversity",
+        "name":"Technical University of Cluj-Napoca",
+        "address":{"@type":"PostalAddress","addressCountry":"Romania"},
+        "educationalCredentialAwarded":"MSc"
+      },
+      {
+        "@type":"CollegeOrUniversity",
+        "name":"University of Oradea",
+        "address":{"@type":"PostalAddress","addressCountry":"Romania"},
+        "educationalCredentialAwarded":"BEng"
+      }
+    ]
   }
   </script>
 </head>
@@ -160,6 +183,32 @@
       <p>I help organizations accelerate delivery without compromising quality. Over a decade in Retail Technology, Payments (Fintech), and Travel Tech — leading Agile transformation, Scaled Agile (SAFe), Agile coaching, and DevOps &amp; CI/CD initiatives.</p>
     </section>
 
+    <!-- Licenses & Certifications -->
+    <section class="card" aria-labelledby="certs-title">
+      <h2 id="certs-title">Licenses &amp; Certifications</h2>
+      <ul>
+        <li><strong>Project Management Journey</strong> — Skillsoft<br><em>Issued Sep 2025 · Skills: Project Management</em></li>
+        <li><strong>Certified SAFe® 6 Product Owner/Product Manager</strong> — Scaled Agile, Inc.<br><em>Issued Nov 2023 · Credential ID: 26582076-8735 · Skills: Servant Leadership</em></li>
+        <li><strong>Agile for Software Development</strong> — Skillsoft<br><em>Issued Jan 2023 · Credential ID: 65923631 · Skills: Servant Leadership</em></li>
+        <li><strong>PRINCE2® Foundation Certification</strong> — PeopleCert<br><em>Issued Jul 2019 · Credential ID: GR656100158LI</em></li>
+        <li><strong>ISTQB® CTAL-TM – Certified Tester Advanced Level Test Manager</strong> — ISTQB<br><em>Issued Dec 2016 · Credential ID: 16-CTAL-1109-SEETB</em></li>
+        <li><strong>Certified ScrumMaster® (CSM)</strong> — Scrum Alliance<br><em>Issued Mar 2015 · Skills: Servant Leadership</em></li>
+        <li><strong>ISTQB® CTAL-TA – Certified Tester Advanced Level Test Analyst</strong> — ISTQB<br><em>Issued Jan 2012 · Credential ID: 12-CTAL-1059-SEETB</em></li>
+        <li><strong>ISTQB® CTFL – Certified Tester Foundation Level</strong> — ISTQB<br><em>Issued Jan 2010 · Credential ID: 10-CTFL-1052-SEETB</em></li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section class="card" aria-labelledby="edu-title">
+      <h2 id="edu-title">Education</h2>
+      <ul>
+        <li><strong>MBA (in progress)</strong> — Rushford Business School, Switzerland<br><em>Focus: Strategic Management and Leadership</em></li>
+        <li><strong>MSc</strong> — Technical University of Cluj-Napoca, Romania</li>
+        <li><strong>BEng</strong> — University of Oradea, Romania</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="card" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <form action="https://formspree.io/f/movngale" method="POST" id="contact-form" novalidate>
@@ -179,9 +228,7 @@
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         <div class="field">
-          <label style="font-weight:normal">
-            <input type="checkbox" name="consent" required> I agree to be contacted.
-          </label>
+          <label style="font-weight:normal"><input type="checkbox" name="consent" required> I agree to be contacted.</label>
         </div>
         <button type="submit">Send Message</button>
       </form>
@@ -189,51 +236,30 @@
     </section>
   </main>
 
-  <footer>
-    © <span id="y"></span> Lucian Irimie
-  </footer>
+  <footer>© <span id="y"></span> Lucian Irimie</footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    const form=document.getElementById('contact-form');
+    const statusEl=document.getElementById('form-status');
+    const SITE_KEY="6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
 
-    const form = document.getElementById('contact-form');
-    const statusEl = document.getElementById('form-status');
-    const SITE_KEY = "6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
-
-    form.addEventListener('submit', function(e){
+    form.addEventListener('submit',function(e){
       e.preventDefault();
-      statusEl.textContent = "Sending…";
-
+      statusEl.textContent="Sending…";
       grecaptcha.ready(function(){
-        grecaptcha.execute(SITE_KEY, {action:'submit'}).then(async function(token){
-          const data = new FormData(form);
-          data.append('g-recaptcha-response', token);
-
-          try {
-            const r = await fetch(form.action, {
-              method: form.method,
-              body: data,
-              headers: {'Accept':'application/json'}
-            });
-            if (r.ok) {
-              form.reset();
-              statusEl.textContent = "Thanks! Your message has been sent.";
-              gtag('event','submit_form_success',{event_category:'engagement',event_label:'Contact Form'});
-            } else {
-              statusEl.textContent = "Oops, something went wrong.";
-              gtag('event','submit_form_error',{event_category:'engagement',event_label:'Contact Form'});
-            }
-          } catch(err) {
-            statusEl.textContent = "Network error — please try again.";
-            gtag('event','submit_form_network_error',{event_category:'engagement',event_label:'Contact Form'});
-          }
+        grecaptcha.execute(SITE_KEY,{action:'submit'}).then(async function(token){
+          const data=new FormData(form);
+          data.append('g-recaptcha-response',token);
+          try{
+            const r=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
+            if(r.ok){form.reset();statusEl.textContent="Thanks! Your message has been sent.";gtag('event','submit_form_success',{event_category:'engagement',event_label:'Contact Form'});}
+            else{statusEl.textContent="Oops, something went wrong.";gtag('event','submit_form_error',{event_category:'engagement',event_label:'Contact Form'});}
+          }catch(err){statusEl.textContent="Network error — please try again.";gtag('event','submit_form_network_error',{event_category:'engagement',event_label:'Contact Form'});}
         });
       });
     });
-
-    document.getElementById('linkedin-btn').addEventListener('click', ()=>{
-      gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});
-    });
+    document.getElementById('linkedin-btn').addEventListener('click',()=>{gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});});
   </script>
 </body>
 </html>
