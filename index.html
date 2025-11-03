@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Lucian Irimie – Agile Delivery Leader | GenAI & LLM-Enabled Delivery (Dublin)</title>
-  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: requirements & BDD → Jira (Synapse). 10+ years in Agile/SAFe, Delivery Management, DevOps." />
+  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: requirements & BDD → Jira (Synapse). Public GPT version in the ChatGPT Store + open-source code on GitHub. 10+ years in Agile/SAFe, Delivery Management, DevOps." />
   <link rel="canonical" href="https://www.lucianirimie.com/" />
   <meta name="robots" content="index,follow" />
   <meta name="keywords" content="Agile Delivery Leader Dublin, GenAI in delivery, LLM for requirements, Jira automation, Disciplined Agile Delivery, Workday transformation" />
@@ -30,6 +30,7 @@
   <meta property="og:see_also" content="https://www.linkedin.com/in/lucianirimie/" />
   <meta property="og:see_also" content="https://github.com/lucianRME" />
   <meta property="og:see_also" content="https://www.credly.com/users/lucian-irimie.75845f88" />
+  <meta property="og:see_also" content="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -147,7 +148,7 @@
     }
   </style>
 
-  <!-- JSON-LD: Person + SoftwareSourceCode (Synapse) + FAQ -->
+  <!-- JSON-LD: Person + SoftwareSourceCode (Synapse) + SoftwareApplication (GPT) + FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -163,7 +164,8 @@
           "https://www.linkedin.com/in/lucianirimie/",
           "https://github.com/lucianRME",
           "https://www.credly.com/users/lucian-irimie.75845f88",
-          "https://skillsoft.digitalbadges.skillsoft.com/profile/lucianirimie411400/wallet"
+          "https://skillsoft.digitalbadges.skillsoft.com/profile/lucianirimie411400/wallet",
+          "https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse"
         ],
         "address":{
           "@type":"PostalAddress",
@@ -186,23 +188,20 @@
         "creator": {"@type":"Person","name":"Lucian Irimie"}
       },
       {
+        "@type": "SoftwareApplication",
+        "name": "Synapse – Meeting-to-Jira Assistant (GPT Store)",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse",
+        "creator": {"@type": "Person", "name": "Lucian Irimie", "url":"https://www.lucianirimie.com"},
+        "description": "A public Custom GPT that converts meeting transcripts into Jira-ready user stories, acceptance criteria, and BDD test cases."
+      },
+      {
         "@type":"FAQPage",
         "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"What is GenAI-enabled Agile Delivery?",
-            "acceptedAnswer":{"@type":"Answer","text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."}
-          },
-          {
-            "@type":"Question",
-            "name":"How do LLMs help with requirements and BDD?",
-            "acceptedAnswer":{"@type":"Answer","text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."}
-          },
-          {
-            "@type":"Question",
-            "name":"Can GenAI integrate with Jira?",
-            "acceptedAnswer":{"@type":"Answer","text":"Yes. Synapse syncs generated requirements and BDD test cases to Jira Cloud with idempotent updates and links for governance."}
-          }
+          {"@type":"Question","name":"What is GenAI-enabled Agile Delivery?","acceptedAnswer":{"@type":"Answer","text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."}},
+          {"@type":"Question","name":"How do LLMs help with requirements and BDD?","acceptedAnswer":{"@type":"Answer","text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."}},
+          {"@type":"Question","name":"Can GenAI integrate with Jira?","acceptedAnswer":{"@type":"Answer","text":"Yes. Synapse syncs generated requirements and BDD test cases to Jira Cloud with idempotent updates and links for governance."}}
         ]
       }
     ]
@@ -223,7 +222,8 @@
           <p class="tagline">Agile Delivery Leader driving GenAI & LLM-enabled delivery.</p>
           <div class="btns">
             <a class="btn btn-primary" id="linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener me">Connect on LinkedIn</a>
-            <a class="btn btn-ghost" href="#synapse">View AI Project (Synapse)</a>
+            <a class="btn btn-ghost" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Synapse on GPT Store</a>
+            <a class="btn btn-ghost" href="#synapse">View Project</a>
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
         </div>
@@ -259,9 +259,14 @@
             <p>
               Meeting transcripts → structured requirements & BDD test cases → one-click Jira sync. Built with Python, Flask UI, SQLite, and OpenAI.
             </p>
-            <div class="btns">
-              <a class="btn btn-primary" href="https://github.com/lucianRME/genai-meetingtojira" target="_blank" rel="noopener">View on GitHub</a>
-              <a class="btn btn-ghost" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">Discuss</a>
+            <p style="margin:.5rem 0 .75rem; color:var(--muted)">
+              <strong>One concept, two experiences:</strong><br />
+              • <em>ChatGPT Store</em> → conversational assistant (public demo)<br />
+              • <em>GitHub</em> → full project source & architecture
+            </p>
+            <div class="btns" style="margin-top:10px">
+              <a class="btn btn-primary" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Try on ChatGPT Store</a>
+              <a class="btn btn-ghost" href="https://github.com/lucianRME/genai-meetingtojira" target="_blank" rel="noopener">View source on GitHub</a>
             </div>
           </div>
         </div>
@@ -289,12 +294,10 @@
       <ul>
         <li><strong>Project Management Journey</strong> — Skillsoft<br><em>Issued Sep 2025 · Skills: Project Management</em></li>
         <li><strong>Certified SAFe® 6 Product Owner/Product Manager</strong> — Scaled Agile, Inc.<br><em>Issued Nov 2023 · Credential ID: 26582076-8735 · Skills: Servant Leadership</em></li>
-        <li><strong>Agile for Software Development</strong> — Skillsoft<br><em>Issued Jan 2023 · Credential ID: 65923631 · Skills: Servant Leadership</em></li>
+        <li><strong>Agile for Software Development</strong> — Skillsoft<br><em>Issued Jan 2023 · Skills: Servant Leadership</em></li>
         <li><strong>PRINCE2® Foundation Certification</strong> — PeopleCert<br><em>Issued Jul 2019 · Credential ID: GR656100158LI</em></li>
         <li><strong>ISTQB® CTAL-TM – Certified Tester Advanced Level Test Manager</strong> — ISTQB<br><em>Issued Dec 2016 · Credential ID: 16-CTAL-1109-SEETB</em></li>
         <li><strong>Certified ScrumMaster® (CSM)</strong> — Scrum Alliance<br><em>Issued Mar 2015 · Skills: Servant Leadership</em></li>
-        <li><strong>ISTQB® CTAL-TA – Certified Tester Advanced Level Test Analyst</strong> — ISTQB<br><em>Issued Jan 2012 · Credential ID: 12-CTAL-1059-SEETB</em></li>
-        <li><strong>ISTQB® CTFL – Certified Tester Foundation Level</strong> — ISTQB<br><em>Issued Jan 2010 · Credential ID: 10-CTFL-1052-SEETB</em></li>
       </ul>
     </section>
 
@@ -340,28 +343,39 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    const form=document.getElementById('contact-form');
-    const statusEl=document.getElementById('form-status');
-    const SITE_KEY="6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
 
-    form.addEventListener('submit',function(e){
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    const SITE_KEY = "6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
+
+    form.addEventListener('submit', function(e){
       e.preventDefault();
-      statusEl.textContent="Sending…";
-      if(typeof grecaptcha==='undefined'){ statusEl.textContent='reCAPTCHA not loaded. Please retry.'; return; }
+      statusEl.textContent = "Sending…";
+      if (typeof grecaptcha === 'undefined') { statusEl.textContent = 'reCAPTCHA not loaded. Please retry.'; return; }
       grecaptcha.ready(function(){
-        grecaptcha.execute(SITE_KEY,{action:'submit'}).then(async function(token){
-          const data=new FormData(form);
-          data.append('g-recaptcha-response',token);
+        grecaptcha.execute(SITE_KEY, {action:'submit'}).then(async function(token){
+          const data = new FormData(form);
+          data.append('g-recaptcha-response', token);
           try{
-            const r=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
-            if(r.ok){form.reset();statusEl.textContent="Thanks! Your message has been sent.";gtag('event','submit_form_success',{event_category:'engagement',event_label:'Contact Form'});} 
-            else {statusEl.textContent="Oops, something went wrong.";gtag('event','submit_form_error',{event_category:'engagement',event_label:'Contact Form'});}        
-          }catch(err){statusEl.textContent="Network error — please try again.";gtag('event','submit_form_network_error',{event_category:'engagement',event_label:'Contact Form'});}        
+            const r = await fetch(form.action, {method: form.method, body: data, headers:{'Accept':'application/json'}});
+            if(r.ok){
+              form.reset();
+              statusEl.textContent = "Thanks! Your message has been sent.";
+              if (typeof gtag === 'function') gtag('event','submit_form_success',{event_category:'engagement',event_label:'Contact Form'});
+            } else {
+              statusEl.textContent = "Oops, something went wrong.";
+              if (typeof gtag === 'function') gtag('event','submit_form_error',{event_category:'engagement',event_label:'Contact Form'});
+            }
+          }catch(err){
+            statusEl.textContent = "Network error — please try again.";
+            if (typeof gtag === 'function') gtag('event','submit_form_network_error',{event_category:'engagement',event_label:'Contact Form'});
+          }
         });
       });
     });
+
     document.getElementById('linkedin-btn').addEventListener('click',()=>{
-      gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});
+      if (typeof gtag === 'function') gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});
     });
   </script>
 </body>
