@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Lucian Irimie – Agile Delivery Leader | AI-Enabled Delivery</title>
-  <meta name="description" content="Agile Delivery Leader in Dublin. Driving AI-enabled delivery. 10+ years in Agile/SAFe, Delivery Management and DevOps. Building AI automation (Synapse) for requirements & BDD → Jira." />
+  <title>Lucian Irimie – Agile Delivery Leader | GenAI & LLM-Enabled Delivery (Dublin)</title>
+  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: requirements & BDD → Jira (Synapse). 10+ years in Agile/SAFe, Delivery Management, DevOps." />
   <link rel="canonical" href="https://www.lucianirimie.com/" />
   <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="Agile Delivery Leader Dublin, GenAI in delivery, LLM for requirements, Jira automation, Disciplined Agile Delivery, Workday transformation" />
   <meta name="built-with" content="HTML, CSS • GitHub Pages • Formspree • reCAPTCHA • Cloudflare" />
 
   <!-- Browser UI color on mobile -->
@@ -15,7 +16,7 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader in Dublin" />
+  <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader | GenAI & LLM-Enabled Delivery" />
   <meta property="og:description" content="Background, featured AI project (Synapse), certifications and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lucianirimie.com/" />
@@ -55,14 +56,14 @@
 
   <style>
     :root {
-      --bg: #0b1020;            /* deep navy for premium look */
-      --bg-2: #10162e;          /* card contrast */
+      --bg: #0b1020;
+      --bg-2: #10162e;
       --grad: radial-gradient(1200px 600px at 10% -20%, #1a73e810, transparent),
               radial-gradient(900px 500px at 90% 20%, #00d4ff10, transparent);
       --card: #121829;
       --text: #e8ecf6;
       --muted: #a7b0c3;
-      --primary: #7ab8ff;       /* light azure accent */
+      --primary: #7ab8ff;
       --primary-ink: #0b1020;
       --stroke: #2a3350;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -119,20 +120,16 @@
     footer{text-align:center;margin:40px 0 24px;color:var(--muted);font-size:.95rem}
     .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 
-    /* media component */
     .feature{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
     .feature-media{width:120px;height:120px;border-radius:12px;border:1px solid var(--stroke);overflow:hidden}
     .feature-media img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* Accessibility: visible focus */
     :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 12px; }
 
-    /* Respect users who prefer reduced motion */
     @media (prefers-reduced-motion: reduce){
       * { scroll-behavior: auto !important; transition: none !important; }
     }
 
-    /* --- Mobile fine-tuning (≤480px) --- */
     @media (max-width: 480px) {
       h1 { font-size: 26px; }
       .hero { grid-template-columns: 80px 1fr; gap: 14px; padding: 22px 0; }
@@ -150,7 +147,7 @@
     }
   </style>
 
-  <!-- JSON-LD: Person + SoftwareSourceCode (Synapse) -->
+  <!-- JSON-LD: Person + SoftwareSourceCode (Synapse) + FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -187,6 +184,26 @@
         "runtimePlatform":"Flask, SQLite, OpenAI API",
         "description":"Agentic pipeline that converts Microsoft Teams transcripts into structured requirements and BDD test cases, then syncs to Jira.",
         "creator": {"@type":"Person","name":"Lucian Irimie"}
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"What is GenAI-enabled Agile Delivery?",
+            "acceptedAnswer":{"@type":"Answer","text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."}
+          },
+          {
+            "@type":"Question",
+            "name":"How do LLMs help with requirements and BDD?",
+            "acceptedAnswer":{"@type":"Answer","text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."}
+          },
+          {
+            "@type":"Question",
+            "name":"Can GenAI integrate with Jira?",
+            "acceptedAnswer":{"@type":"Answer","text":"Yes. Synapse syncs generated requirements and BDD test cases to Jira Cloud with idempotent updates and links for governance."}
+          }
+        ]
       }
     ]
   }
@@ -203,7 +220,7 @@
         <div>
           <h1>Lucian Irimie</h1>
           <p class="subtitle">Agile Delivery Leader • Dublin, Ireland</p>
-          <p class="tagline">Agile Delivery Leader driving AI-enabled delivery.</p>
+          <p class="tagline">Agile Delivery Leader driving GenAI & LLM-enabled delivery.</p>
           <div class="btns">
             <a class="btn btn-primary" id="linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener me">Connect on LinkedIn</a>
             <a class="btn btn-ghost" href="#synapse">View AI Project (Synapse)</a>
@@ -221,6 +238,7 @@
         <p>
           I help organizations accelerate delivery without compromising quality. Over the last decade across Retail, Fintech and Travel Tech,
           I led scaled Agile (SAFe) adoptions, CI/CD enablement, and cross-team delivery programs.
+          I currently use Generative AI (LLMs) to accelerate requirements and BDD-to-Jira workflows in enterprise transformations.
         </p>
         <div class="badges" aria-label="Highlights">
           <span class="badge">SAFe 6 POPM</span>
@@ -235,7 +253,6 @@
         <h2>Featured Project — Synapse</h2>
         <div class="feature">
           <div class="feature-media" aria-hidden="true">
-            <!-- Add explicit dimensions to reduce CLS; adjust to your real image ratio -->
             <img src="/synapse-preview.png" alt="Synapse UI preview" loading="lazy" width="560" height="360" />
           </div>
           <div>
@@ -249,6 +266,21 @@
           </div>
         </div>
       </article>
+    </section>
+
+    <!-- GenAI / LLM Section -->
+    <section class="card" aria-labelledby="genai-title">
+      <h2 id="genai-title">GenAI & LLM-Enabled Delivery</h2>
+      <p>
+        I apply <strong>Generative AI</strong> and <strong>Large Language Models (LLMs)</strong> to accelerate Agile delivery:
+        <strong>requirements analysis</strong>, <strong>BDD test generation</strong>, and <strong>one-click Jira sync</strong>.
+        This complements Disciplined Agile Delivery in large programmes (Retail, Payments, Workday).
+      </p>
+      <ul>
+        <li>LLM pipeline for <em>requirements → BDD</em> (Synapse) integrated with Jira Cloud</li>
+        <li>GenAI-assisted backlog hygiene, acceptance criteria, and test coverage</li>
+        <li>LLM-based summaries to speed up governance & decision-making</li>
+      </ul>
     </section>
 
     <!-- Licenses & Certifications -->
