@@ -125,6 +125,10 @@
     .feature-media{width:120px;height:120px;border-radius:12px;border:1px solid var(--stroke);overflow:hidden}
     .feature-media img{width:100%;height:100%;object-fit:cover;display:block}
 
+    .table{width:100%;border-collapse:separate;border-spacing:0}
+    .table th,.table td{border:1px solid var(--stroke);padding:10px 12px}
+    .table th{background:var(--bg-2);text-align:left}
+
     :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 12px; }
 
     @media (prefers-reduced-motion: reduce){
@@ -194,14 +198,16 @@
         "operatingSystem": "Web",
         "url": "https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse",
         "creator": {"@type": "Person", "name": "Lucian Irimie", "url":"https://www.lucianirimie.com"},
-        "description": "A public Custom GPT that converts meeting transcripts into Jira-ready user stories, acceptance criteria, and BDD test cases."
+        "description": "A public Custom GPT that converts meeting transcripts into Jira-ready user stories, acceptance criteria, and BDD test cases.",
+        "offers": {"@type":"Offer","price":"0","priceCurrency":"EUR"}
       },
       {
         "@type":"FAQPage",
         "mainEntity":[
           {"@type":"Question","name":"What is GenAI-enabled Agile Delivery?","acceptedAnswer":{"@type":"Answer","text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."}},
           {"@type":"Question","name":"How do LLMs help with requirements and BDD?","acceptedAnswer":{"@type":"Answer","text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."}},
-          {"@type":"Question","name":"Can GenAI integrate with Jira?","acceptedAnswer":{"@type":"Answer","text":"Yes. Synapse syncs generated requirements and BDD test cases to Jira Cloud with idempotent updates and links for governance."}}
+          {"@type":"Question","name":"Can GenAI integrate with Jira?","acceptedAnswer":{"@type":"Answer","text":"Yes. Synapse syncs generated requirements and BDD test cases to Jira Cloud with idempotent updates and links for governance."}},
+          {"@type":"Question","name":"What does the Synapse GPT include?","acceptedAnswer":{"@type":"Answer","text":"A guided, conversational workflow: ingest transcript snippets, generate user stories + acceptance criteria, draft BDD scenarios, and export-ready summaries. It’s a demo; the full automation (SQLite, Flask UI, Jira sync) lives on GitHub."}}
         ]
       }
     ]
@@ -222,7 +228,7 @@
           <p class="tagline">Agile Delivery Leader driving GenAI & LLM-enabled delivery.</p>
           <div class="btns">
             <a class="btn btn-primary" id="linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener me">Connect on LinkedIn</a>
-            <a class="btn btn-ghost" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Synapse on GPT Store</a>
+            <a class="btn btn-ghost" href="#gpt-store">Synapse on GPT Store</a>
             <a class="btn btn-ghost" href="#synapse">View Project</a>
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
@@ -265,12 +271,76 @@
               • <em>GitHub</em> → full project source & architecture
             </p>
             <div class="btns" style="margin-top:10px">
-              <a class="btn btn-primary" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Try on ChatGPT Store</a>
+              <a class="btn btn-primary" href="#gpt-store">Try on ChatGPT Store</a>
               <a class="btn btn-ghost" href="https://github.com/lucianRME/genai-meetingtojira" target="_blank" rel="noopener">View source on GitHub</a>
             </div>
           </div>
         </div>
       </article>
+    </section>
+
+    <!-- NEW: GPT Store Section: What’s inside Synapse GPT? -->
+    <section id="gpt-store" class="card" aria-labelledby="gpt-title">
+      <h2 id="gpt-title">Synapse on GPT Store — What it includes</h2>
+      <p>
+        <strong>Synapse – Meeting-to-Jira Assistant</strong> is the public demo in the ChatGPT Store. It guides you through a structured workflow to
+        turn meeting notes/transcripts into draft <em>user stories</em>, <em>acceptance criteria</em>, and <em>BDD scenarios</em> you can copy into Jira.
+      </p>
+      <ul>
+        <li><strong>Input</strong>: paste transcript snippets or bullet points (Teams/Meet/Zoom).</li>
+        <li><strong>Processing</strong>: filters small talk, extracts entities, produces story templates + AC + BDD.</li>
+        <li><strong>Outputs</strong>: copy-paste ready stories, CSV-style tables, and quick summaries.</li>
+        <li><strong>Scope</strong>: <em>no API calls or data persistence</em> in the public GPT (privacy-friendly demo).</li>
+      </ul>
+
+      <table class="table" role="table" aria-label="Synapse options comparison">
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col">GPT Store (Public Demo)</th>
+            <th scope="col">GitHub Project (Full)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Transcript → Requirements</td>
+            <td>Yes (chat-driven)</td>
+            <td>Yes (pipeline with agents)</td>
+          </tr>
+          <tr>
+            <td>BDD Generation</td>
+            <td>Yes (inline)</td>
+            <td>Yes (module + review step)</td>
+          </tr>
+          <tr>
+            <td>Persistence (SQLite)</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Flask UI (approve & sync)</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Jira Cloud Sync (idempotent)</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>CSV Export</td>
+            <td>Copy-paste only</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btns" style="margin-top:14px">
+        <a class="btn btn-primary" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Open Synapse in GPT Store</a>
+        <a class="btn btn-ghost" href="https://github.com/lucianRME/genai-meetingtojira" target="_blank" rel="noopener">Explore full code on GitHub</a>
+      </div>
+
+      <p class="subtitle" style="margin-top:10px">Privacy note: the public GPT runs inside ChatGPT — no automatic Jira/API access, no local storage. The full project adds enterprise features via your own deployment.</p>
     </section>
 
     <!-- GenAI / LLM Section -->
