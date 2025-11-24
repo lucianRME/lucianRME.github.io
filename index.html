@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Lucian Irimie – Agile & AI Delivery (Dublin)</title>
-  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: requirements & BDD → Jira (Synapse). Public GPT version in the ChatGPT Store + open-source code on GitHub. 10+ years in Agile/SAFe, Delivery Management, DevOps." />
+  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: meeting transcripts → requirements & BDD → Jira (Synapse). Live Azure demo and a public GPT version in the ChatGPT Store. 10+ years in Agile/SAFe, Delivery Management, DevOps." />
   <link rel="canonical" href="https://www.lucianirimie.com/" />
   <meta name="robots" content="index,follow" />
   <meta name="keywords" content="Agile & AI Delivery Leader based in Dublin. Helping teams deliver faster and smarter with automation, GenAI, and practical Agile methods." />
-  <meta name="built-with" content="HTML, CSS • GitHub Pages • Formspree • reCAPTCHA • Cloudflare" />
+  <meta name="built-with" content="HTML, CSS • Static hosting • Formspree • reCAPTCHA • Cloudflare" />
 
   <!-- Browser UI color on mobile -->
   <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
@@ -17,7 +17,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader | GenAI & LLM-Enabled Delivery" />
-  <meta property="og:description" content="Background, featured AI project (Synapse), certifications and contact." />
+  <meta property="og:description" content="Background, featured AI project (Synapse), live Azure demo, GPT version and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lucianirimie.com/" />
   <meta property="og:image" content="https://www.lucianirimie.com/Lucian%20Irimie.jpeg" />
@@ -28,7 +28,6 @@
 
   <!-- Professional links -->
   <meta property="og:see_also" content="https://www.linkedin.com/in/lucianirimie/" />
-  <meta property="og:see_also" content="https://github.com/lucianRME" />
   <meta property="og:see_also" content="https://www.credly.com/users/lucian-irimie.75845f88" />
   <meta property="og:see_also" content="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" />
 
@@ -152,7 +151,7 @@
     }
   </style>
 
-  <!-- JSON-LD: Person + SoftwareSourceCode (Synapse) + SoftwareApplication (GPT) + FAQ -->
+  <!-- JSON-LD: Person + SoftwareApplication (GPT) + SoftwareApplication (Azure Demo) + FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -166,7 +165,6 @@
         "description":"Agile Delivery Leader in Dublin with 10+ years driving Agile/SAFe, delivery management, and DevOps transformation.",
         "sameAs":[
           "https://www.linkedin.com/in/lucianirimie/",
-          "https://github.com/lucianRME",
           "https://www.credly.com/users/lucian-irimie.75845f88",
           "https://skillsoft.digitalbadges.skillsoft.com/profile/lucianirimie411400/wallet",
           "https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse"
@@ -183,31 +181,63 @@
         ]
       },
       {
-        "@type":"SoftwareSourceCode",
-        "name":"Synapse — Meeting Transcript → Requirements & BDD → Jira",
-        "codeRepository":"https://github.com/lucianRME/genai-meetingtojira",
-        "programmingLanguage":"Python",
-        "runtimePlatform":"Flask, SQLite, OpenAI API",
-        "description":"Agentic pipeline that converts Microsoft Teams transcripts into structured requirements and BDD test cases, then syncs to Jira.",
-        "creator": {"@type":"Person","name":"Lucian Irimie"}
-      },
-      {
         "@type": "SoftwareApplication",
         "name": "Synapse – Meeting-to-Jira Assistant (GPT Store)",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "url": "https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse",
         "creator": {"@type": "Person", "name": "Lucian Irimie", "url":"https://www.lucianirimie.com"},
-        "description": "A public Custom GPT that converts meeting transcripts into Jira-ready user stories, acceptance criteria, and BDD test cases.",
+        "description": "A public Custom GPT that converts meeting transcripts into Jira-ready user stories, acceptance criteria, and BDD test cases in a conversational way.",
         "offers": {"@type":"Offer","price":"0","priceCurrency":"EUR"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Synapse SaaS Demo (Azure)",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://synapse-saas-c7b0dngkb6h0gghj.westeurope-01.azurewebsites.net/",
+        "creator": {
+          "@type": "Person",
+          "name": "Lucian Irimie",
+          "url": "https://www.lucianirimie.com"
+        },
+        "description": "Live demo deployment of Synapse on Azure App Service, allowing users to upload meeting transcripts and optionally use their own Jira Cloud credentials for a temporary, session-only sync."
       },
       {
         "@type":"FAQPage",
         "mainEntity":[
-          {"@type":"Question","name":"What is GenAI-enabled Agile Delivery?","acceptedAnswer":{"@type":"Answer","text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."}},
-          {"@type":"Question","name":"How do LLMs help with requirements and BDD?","acceptedAnswer":{"@type":"Answer","text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."}},
-          {"@type":"Question","name":"Can GenAI integrate with Jira?","acceptedAnswer":{"@type":"Answer","text":"Yes. Synapse syncs generated requirements and BDD test cases to Jira Cloud with idempotent updates and links for governance."}},
-          {"@type":"Question","name":"What does the Synapse GPT include?","acceptedAnswer":{"@type":"Answer","text":"A guided, conversational workflow: ingest transcript snippets, generate user stories + acceptance criteria, draft BDD scenarios, and export-ready summaries. It’s a demo; the full automation (SQLite, Flask UI, Jira sync) lives on GitHub."}}
+          {
+            "@type":"Question",
+            "name":"What is GenAI-enabled Agile Delivery?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"How do LLMs help with requirements and BDD?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Can GenAI integrate with Jira?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes. Synapse integrates with Jira Cloud so that generated requirements and BDD test cases can be synced with idempotent updates and links for governance."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"What does the Synapse GPT include?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"A guided, conversational workflow: ingest transcript snippets, generate user stories and acceptance criteria, draft BDD scenarios, and produce export-ready summaries. For a more complete experience, the Synapse Azure demo adds a UI, persistence and Jira Cloud sync using your own credentials."
+            }
+          }
         ]
       }
     ]
@@ -228,8 +258,8 @@
           <p class="tagline">Agile Delivery Leader driving GenAI & LLM-enabled delivery.</p>
           <div class="btns">
             <a class="btn btn-primary" id="linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener me">Connect on LinkedIn</a>
+            <a class="btn btn-ghost" href="#synapse">Synapse (Azure Demo)</a>
             <a class="btn btn-ghost" href="#gpt-store">Synapse on GPT Store</a>
-            <a class="btn btn-ghost" href="#synapse">View Project</a>
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
         </div>
@@ -263,23 +293,38 @@
           </div>
           <div>
             <p>
-              Meeting transcripts → structured requirements & BDD test cases → one-click Jira sync. Built with Python, Flask UI, SQLite, and OpenAI.
+              Meeting transcripts → structured requirements & BDD test cases → one-click Jira sync.
+              Built with Python, Flask UI, SQLite, and OpenAI.
             </p>
             <p style="margin:.5rem 0 .75rem; color:var(--muted)">
-              <strong>One concept, two experiences:</strong><br />
-              • <em>ChatGPT Store</em> → conversational assistant (public demo)<br />
-              • <em>GitHub</em> → full project source & architecture
+              <strong>Two ways to try Synapse:</strong><br />
+              • <em>Azure Live Demo</em> — full UI where you can upload a transcript and optionally sync to your own Jira Cloud project using session-only credentials.<br />
+              • <em>ChatGPT Store</em> — lightweight conversational assistant for generating stories and BDD.
             </p>
             <div class="btns" style="margin-top:10px">
-              <a class="btn btn-primary" href="#gpt-store">Try on ChatGPT Store</a>
-              <a class="btn btn-ghost" href="https://github.com/lucianRME/genai-meetingtojira" target="_blank" rel="noopener">View source on GitHub</a>
+              <a
+                class="btn btn-primary"
+                href="https://synapse-saas-c7b0dngkb6h0gghj.westeurope-01.azurewebsites.net/"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Azure Demo
+              </a>
+              <a
+                class="btn btn-ghost"
+                href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse"
+                target="_blank"
+                rel="noopener"
+              >
+                Try on ChatGPT Store
+              </a>
             </div>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- NEW: GPT Store Section: What’s inside Synapse GPT? -->
+    <!-- GPT Store Section: What’s inside Synapse GPT? -->
     <section id="gpt-store" class="card" aria-labelledby="gpt-title">
       <h2 id="gpt-title">Synapse on GPT Store — What it includes</h2>
       <p>
@@ -289,7 +334,7 @@
       <ul>
         <li><strong>Input</strong>: paste transcript snippets or bullet points (Teams/Meet/Zoom).</li>
         <li><strong>Processing</strong>: filters small talk, extracts entities, produces story templates + AC + BDD.</li>
-        <li><strong>Outputs</strong>: copy-paste ready stories, CSV-style tables, and quick summaries.</li>
+        <li><strong>Outputs</strong>: copy-paste ready stories, simple tables, and quick summaries.</li>
         <li><strong>Scope</strong>: <em>no API calls or data persistence</em> in the public GPT (privacy-friendly demo).</li>
       </ul>
 
@@ -297,25 +342,25 @@
         <thead>
           <tr>
             <th scope="col">Capability</th>
-            <th scope="col">GPT Store (Public Demo)</th>
-            <th scope="col">GitHub Project (Full)</th>
+            <th scope="col">GPT Store (ChatGPT)</th>
+            <th scope="col">Azure Demo (Web App)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Transcript → Requirements</td>
             <td>Yes (chat-driven)</td>
-            <td>Yes (pipeline with agents)</td>
+            <td>Yes (pipeline behind the UI)</td>
           </tr>
           <tr>
             <td>BDD Generation</td>
             <td>Yes (inline)</td>
-            <td>Yes (module + review step)</td>
+            <td>Yes</td>
           </tr>
           <tr>
             <td>Persistence (SQLite)</td>
             <td>No</td>
-            <td>Yes</td>
+            <td>Yes (requirements & test cases)</td>
           </tr>
           <tr>
             <td>Flask UI (approve & sync)</td>
@@ -323,24 +368,26 @@
             <td>Yes</td>
           </tr>
           <tr>
-            <td>Jira Cloud Sync (idempotent)</td>
-            <td>No</td>
-            <td>Yes</td>
+            <td>Jira Cloud Sync</td>
+            <td>No (manual copy-paste)</td>
+            <td>Yes — using your Jira URL, user and API token (session-only)</td>
           </tr>
           <tr>
-            <td>CSV Export</td>
+            <td>CSV-style export</td>
             <td>Copy-paste only</td>
-            <td>Yes</td>
+            <td>Supported within the app</td>
           </tr>
         </tbody>
       </table>
 
       <div class="btns" style="margin-top:14px">
         <a class="btn btn-primary" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Open Synapse in GPT Store</a>
-        <a class="btn btn-ghost" href="https://github.com/lucianRME/genai-meetingtojira" target="_blank" rel="noopener">Explore full code on GitHub</a>
+        <a class="btn btn-ghost" href="#synapse">Go to Azure Demo</a>
       </div>
 
-      <p class="subtitle" style="margin-top:10px">Privacy note: the public GPT runs inside ChatGPT — no automatic Jira/API access, no local storage. The full project adds enterprise features via your own deployment.</p>
+      <p class="subtitle" style="margin-top:10px">
+        Privacy note: the public GPT runs inside ChatGPT — no automatic Jira/API access, no local storage. The Azure demo adds a UI, a lightweight database and Jira Cloud integration using your own credentials for that session only.
+      </p>
     </section>
 
     <!-- GenAI / LLM Section -->
