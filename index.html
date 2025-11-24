@@ -235,7 +235,7 @@
             "name":"What does the Synapse GPT include?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"A guided, conversational workflow: ingest transcript snippets, generate user stories and acceptance criteria, draft BDD scenarios, and produce export-ready summaries. For a more complete experience, the Synapse Azure demo adds a UI, persistence and Jira Cloud sync using your own credentials."
+              "text":"A guided, conversational workflow: ingest transcript snippets, generate user stories and acceptance criteria, draft BDD scenarios, and produce export-ready summaries. For a more complete experience, the Synapse Azure demo adds a UI, lightweight in-app storage and Jira Cloud sync using your own credentials for that session only."
             }
           }
         ]
@@ -358,9 +358,9 @@
             <td>Yes</td>
           </tr>
           <tr>
-            <td>Persistence (SQLite)</td>
-            <td>No</td>
-            <td>Yes (requirements & test cases)</td>
+            <td>Temporary storage</td>
+            <td>No (chat only)</td>
+            <td>Yes — stored in local app storage (cleared on restart)</td>
           </tr>
           <tr>
             <td>Flask UI (approve & sync)</td>
@@ -424,7 +424,7 @@
       <ul>
         <li><strong>MBA</strong> — Rushford Business School, Switzerland<br><em>Focus: Strategic Management and Leadership</em></li>
         <li><strong>MSc</strong> — Technical University of Cluj-Napoca, Romania</li>
-        <li><strong>BEng</strong> — University of Oradea, Romania</li>
+        <li><strong%BEng</strong> — University of Oradea, Romania</li>
       </ul>
     </section>
 
