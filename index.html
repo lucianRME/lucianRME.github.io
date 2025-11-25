@@ -34,25 +34,19 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-
   <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/Lucian%20Irimie.jpeg" imagesrcset="/Lucian%20Irimie.jpeg 1x" imagesizes="120px" />
+  <link rel="preload" as="image" href="/Lucian%20Irimie.jpeg" fetchpriority="high" />
 
-  <!-- Google Analytics -->
+  <!-- Google Analytics (kept, but initialised after window load) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-10FCSZC4RZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-10FCSZC4RZ');
+    window.addEventListener('load', function () {
+      gtag('js', new Date());
+      gtag('config', 'G-10FCSZC4RZ');
+    });
   </script>
-
-  <!-- reCAPTCHA v3 (site key is public by design) -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT" defer></script>
 
   <style>
     :root {
@@ -79,7 +73,9 @@
 
     html{color-scheme:light dark;scroll-behavior:smooth}
     body{
-      margin:0; font-family:Inter,system-ui,sans-serif; line-height:1.65;
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.65;
       background:var(--bg); color:var(--text);
       background-image:var(--grad);
       min-height:100dvh;
@@ -90,7 +86,10 @@
     .hero{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;padding:28px 0}
     .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow)}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    h1{font-family:Poppins,Inter;font-size:34px;margin:0 0 6px;letter-spacing:.2px}
+    h1{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size:34px;margin:0 0 6px;letter-spacing:.2px;font-weight:700;
+    }
     .subtitle{color:var(--muted);margin:0 0 12px}
     .tagline{margin:0 0 16px; font-weight:600}
 
@@ -102,7 +101,10 @@
 
     main section{margin-top:28px}
     .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    h2{font-family:Poppins,Inter;font-size:22px;margin:0 0 12px}
+    h2{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size:22px;margin:0 0 12px;font-weight:700;
+    }
 
     .grid{display:grid;gap:18px}
     @media (min-width: 820px){ .grid{grid-template-columns:1.1fr .9fr} }
@@ -565,6 +567,16 @@
       }
     }
 
+    let recaptchaLoaded = false;
+    function loadRecaptcha() {
+      if (recaptchaLoaded) return;
+      recaptchaLoaded = true;
+      const s = document.createElement('script');
+      s.src = "https://www.google.com/recaptcha/api.js?render=" + SITE_KEY;
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       // HERO buttons
       const heroDemo = document.getElementById('hero-demo-btn');
@@ -601,12 +613,28 @@
       // Footer back to top
       const backToTop = document.getElementById('backtotop-btn');
       if (backToTop) backToTop.addEventListener('click', () => trackClick('back_to_top'));
+
+      // Lazy-load reCAPTCHA when contact section is near or form focused
+      const contactSection = document.getElementById('contact');
+      if ('IntersectionObserver' in window && contactSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              loadRecaptcha();
+              observer.disconnect();
+            }
+          });
+        }, { rootMargin: '200px' });
+        observer.observe(contactSection);
+      }
+      form.addEventListener('focusin', loadRecaptcha);
     });
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
       statusEl.textContent = "Sending…";
-      if (typeof grecaptcha === 'undefined') { statusEl.textContent = 'reCAPTCHA not loaded. Please retry.'; return; }
+      loadRecaptcha();
+      if (typeof grecaptcha === 'undefined') { statusEl.textContent = 'reCAPTCHA not loaded. Please retry in a moment.'; return; }
       grecaptcha.ready(function(){
         grecaptcha.execute(SITE_KEY, {action:'submit'}).then(async function(token){
           const data = new FormData(form);
