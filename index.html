@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Lucian Irimie – Agile & AI Delivery (Dublin)</title>
-  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: meeting transcripts → requirements & BDD → Jira (Synapse). Live Azure demo and a public GPT version in the ChatGPT Store. 10+ years in Agile/SAFe, Delivery Management, DevOps." />
+  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: meeting transcripts → requirements & BDD → Jira (Synapse). Live web demo and a public GPT version in the ChatGPT Store. 10+ years in Agile/SAFe, Delivery Management, DevOps." />
   <link rel="canonical" href="https://www.lucianirimie.com/" />
   <meta name="robots" content="index,follow" />
   <meta name="keywords" content="Agile & AI Delivery Leader based in Dublin. Helping teams deliver faster and smarter with automation, GenAI, and practical Agile methods." />
@@ -17,7 +17,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader | GenAI & LLM-Enabled Delivery" />
-  <meta property="og:description" content="Background, featured AI project (Synapse), live Azure demo, GPT version and contact." />
+  <meta property="og:description" content="Background, featured AI project (Synapse), live web demo, GPT version and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lucianirimie.com/" />
   <meta property="og:image" content="https://www.lucianirimie.com/Lucian%20Irimie.jpeg" />
@@ -192,7 +192,7 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Synapse SaaS Demo (Azure)",
+        "name": "Synapse Web Demo",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "url": "https://synapse.lucianirimie.com/",
@@ -201,7 +201,7 @@
           "name": "Lucian Irimie",
           "url": "https://www.lucianirimie.com"
         },
-        "description": "Live demo deployment of Synapse on Azure App Service, allowing users to upload meeting transcripts and optionally use their own Jira Cloud credentials for a temporary, session-only sync."
+        "description": "Live web demo deployment of Synapse on Azure App Service, allowing users to upload meeting transcripts and optionally use their own Jira Cloud credentials for a temporary, session-only sync."
       },
       {
         "@type":"FAQPage",
@@ -235,7 +235,7 @@
             "name":"What does the Synapse GPT include?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"A guided, conversational workflow: ingest transcript snippets, generate user stories and acceptance criteria, draft BDD scenarios, and produce export-ready summaries. For a more complete experience, the Synapse Azure demo adds a UI, lightweight in-app storage and Jira Cloud sync using your own credentials for that session only."
+              "text":"A guided, conversational workflow: ingest transcript snippets, generate user stories and acceptance criteria, draft BDD scenarios, and produce export-ready summaries. For a more complete experience, the Synapse Web Demo adds a UI, lightweight in-app storage and Jira Cloud sync using your own credentials for that session only."
             }
           }
         ]
@@ -257,11 +257,35 @@
           <p class="subtitle">Agile Delivery Leader • Dublin, Ireland</p>
           <p class="tagline">Applying GenAI & LLM-enabled delivery practices to real enterprise workflows.</p>
           <div class="btns">
-            <a class="btn btn-primary" id="linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener me">Connect on LinkedIn</a>
-            <a class="btn btn-ghost" href="#synapse">Synapse (Azure Demo)</a>
-            <a class="btn btn-ghost" href="#gpt-store">Synapse on GPT Store</a>
-            <a class="btn btn-ghost" href="#contact">Contact</a>
+            <a
+              class="btn btn-primary"
+              id="hero-demo-btn"
+              href="https://synapse.lucianirimie.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Synapse Web Demo
+            </a>
+            <a
+              class="btn btn-ghost"
+              id="hero-gpt-btn"
+              href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse"
+              target="_blank"
+              rel="noopener"
+            >
+              Try on GPT Store
+            </a>
+            <a
+              class="btn btn-ghost"
+              id="hero-contact-btn"
+              href="#contact"
+            >
+              Contact
+            </a>
           </div>
+          <p style="margin-top:6px; color:var(--muted); font-size:.9rem;">
+            No signup · No installation · Runs in browser
+          </p>
         </div>
       </div>
     </div>
@@ -307,14 +331,16 @@
           <div class="btns" style="margin-top:10px">
             <a
               class="btn btn-primary"
+              id="synapse-demo-btn"
               href="https://synapse.lucianirimie.com/"
               target="_blank"
               rel="noopener"
             >
-              Open Azure Demo
+              Synapse Web Demo
             </a>
             <a
               class="btn btn-ghost"
+              id="synapse-gpt-btn"
               href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse"
               target="_blank"
               rel="noopener"
@@ -323,6 +349,7 @@
             </a>
             <a
               class="btn btn-ghost"
+              id="synapse-pdf-btn"
               href="/Synapse-Sample-Output.pdf"
               target="_blank"
               rel="noopener"
@@ -331,7 +358,7 @@
             </a>
           </div>
           <p class="subtitle" style="margin-top:10px">
-            Synapse will launch as a Jira Marketplace app (Forge). This demo and sample output preview the delivery outcomes it enables.
+            Synapse Web Demo and the sample output preview the delivery outcomes Synapse enables. A Jira Marketplace app (Forge) is planned.
           </p>
         </div>
       </div>
@@ -356,7 +383,7 @@
           <tr>
             <th scope="col">Capability</th>
             <th scope="col">GPT Store (ChatGPT)</th>
-            <th scope="col">Azure Demo (Web App)</th>
+            <th scope="col">Synapse Web Demo</th>
           </tr>
         </thead>
         <tbody>
@@ -394,42 +421,65 @@
       </table>
 
       <div class="btns" style="margin-top:14px">
-        <a class="btn btn-primary" href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse" target="_blank" rel="noopener">Open Synapse in GPT Store</a>
-        <a class="btn btn-ghost" href="#synapse">Go to Azure Demo</a>
+        <a
+          class="btn btn-primary"
+          id="gpt-open-btn"
+          href="https://chat.openai.com/g/g-6908d321dafc819194250880f244a71c-synapse"
+          target="_blank"
+          rel="noopener"
+        >
+          Synapse in GPT Store
+        </a>
+        <a
+          class="btn btn-ghost"
+          id="gpt-demo-btn"
+          href="#synapse"
+        >
+          Go to Synapse Web Demo
+        </a>
       </div>
 
       <p class="subtitle" style="margin-top:10px">
-        Privacy note: the public GPT runs inside ChatGPT — no automatic Jira/API access, no local storage. The Azure demo adds a UI, a lightweight database and Jira Cloud integration using your own credentials for that session only.
+        Privacy note: the public GPT runs inside ChatGPT — no automatic Jira/API access, no local storage. The Synapse Web Demo adds a UI, a lightweight database and Jira Cloud integration using your own credentials for that session only.
       </p>
     </section>
 
-<!-- Professional Networking & Collaboration -->
-<section class="card" id="recruiters">
-  <h2>Professional Networking & Collaboration</h2>
-  <p>
-    I’m open to connecting with organisations and leaders interested in GenAI-enabled delivery, requirements acceleration,
-    BDD adoption and practical Agile improvement. Happy to share insights, demonstrate Synapse, contribute to thought
-    leadership, or explore future collaboration opportunities.
-  </p>
+    <!-- Professional Networking & Collaboration -->
+    <section class="card" id="recruiters">
+      <h2>Professional Networking & Collaboration</h2>
+      <p>
+        I’m open to connecting with organisations and leaders interested in GenAI-enabled delivery, requirements acceleration,
+        BDD adoption and practical Agile improvement. Happy to share insights, demonstrate Synapse, contribute to thought
+        leadership, or explore future collaboration opportunities.
+      </p>
 
-  <ul>
-    <li>Expert conversations on Agile & AI-enabled delivery practices</li>
-    <li>Synapse demo sessions for product, delivery or technology teams</li>
-    <li>Advisory discussions on requirements, BDD and Jira readiness</li>
-    <li>Industry networking in Dublin and across Europe</li>
-    <li>Speaking opportunities on GenAI in delivery and transformation</li>
-  </ul>
+      <ul>
+        <li>Expert conversations on Agile & AI-enabled delivery practices</li>
+        <li>Synapse demo sessions for product, delivery or technology teams</li>
+        <li>Advisory discussions on requirements, BDD and Jira readiness</li>
+        <li>Industry networking in Dublin and across Europe</li>
+        <li>Speaking opportunities on GenAI in delivery and transformation</li>
+      </ul>
 
-  <div class="btns" style="margin-top:14px">
-    <a class="btn btn-primary" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">
-      Connect on LinkedIn
-    </a>
-    <a class="btn btn-ghost" href="#contact">
-      Request a demo or conversation
-    </a>
-  </div>
-</section>
-
+      <div class="btns" style="margin-top:14px">
+        <a
+          class="btn btn-primary"
+          id="network-linkedin-btn"
+          href="https://www.linkedin.com/in/lucianirimie/"
+          target="_blank"
+          rel="noopener"
+        >
+          Connect on LinkedIn
+        </a>
+        <a
+          class="btn btn-ghost"
+          id="network-contact-btn"
+          href="#contact"
+        >
+          Request a demo or conversation
+        </a>
+      </div>
+    </section>
 
     <!-- GenAI / LLM Section -->
     <section class="card" aria-labelledby="genai-title">
@@ -483,7 +533,10 @@
           <textarea id="message" name="message" rows="5" required placeholder="Hi Lucian, I’d like to chat about…"></textarea>
         </div>
         <div class="field">
-          <label style="font-weight:normal"><input type="checkbox" name="consent" required> I agree to be contacted.</label>
+          <label style="font-weight:normal">
+            <input type="checkbox" name="consent" required>
+            I agree to be contacted.
+          </label>
         </div>
         <button type="submit">Send Message</button>
       </form>
@@ -491,7 +544,10 @@
     </section>
   </main>
 
-  <footer>© <span id="y"></span> Lucian Irimie · <a href="#main" class="btn btn-ghost" style="padding:4px 10px">Back to top</a></footer>
+  <footer>
+    © <span id="y"></span> Lucian Irimie ·
+    <a id="backtotop-btn" href="#main" class="btn btn-ghost" style="padding:4px 10px">Back to top</a>
+  </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -499,6 +555,53 @@
     const form = document.getElementById('contact-form');
     const statusEl = document.getElementById('form-status');
     const SITE_KEY = "6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
+
+    function trackClick(label) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'cta_click', {
+          event_category: 'engagement',
+          event_label: label
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // HERO buttons
+      const heroDemo = document.getElementById('hero-demo-btn');
+      const heroGpt = document.getElementById('hero-gpt-btn');
+      const heroContact = document.getElementById('hero-contact-btn');
+
+      if (heroDemo) heroDemo.addEventListener('click', () => trackClick('demo_hero'));
+      if (heroGpt) heroGpt.addEventListener('click', () => trackClick('gpt_hero'));
+      if (heroContact) heroContact.addEventListener('click', () => trackClick('contact_hero'));
+
+      // Synapse section buttons
+      const synDemo = document.getElementById('synapse-demo-btn');
+      const synGpt = document.getElementById('synapse-gpt-btn');
+      const synPdf = document.getElementById('synapse-pdf-btn');
+
+      if (synDemo) synDemo.addEventListener('click', () => trackClick('demo_synapse_section'));
+      if (synGpt) synGpt.addEventListener('click', () => trackClick('gpt_synapse_section'));
+      if (synPdf) synPdf.addEventListener('click', () => trackClick('pdf_synapse_sample'));
+
+      // GPT Store section buttons
+      const gptOpen = document.getElementById('gpt-open-btn');
+      const gptDemo = document.getElementById('gpt-demo-btn');
+
+      if (gptOpen) gptOpen.addEventListener('click', () => trackClick('gpt_store_section_open'));
+      if (gptDemo) gptDemo.addEventListener('click', () => trackClick('gpt_store_section_to_demo'));
+
+      // Networking section buttons
+      const netLinkedIn = document.getElementById('network-linkedin-btn');
+      const netContact = document.getElementById('network-contact-btn');
+
+      if (netLinkedIn) netLinkedIn.addEventListener('click', () => trackClick('network_linkedin'));
+      if (netContact) netContact.addEventListener('click', () => trackClick('network_contact'));
+
+      // Footer back to top
+      const backToTop = document.getElementById('backtotop-btn');
+      if (backToTop) backToTop.addEventListener('click', () => trackClick('back_to_top'));
+    });
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -513,21 +616,32 @@
             if(r.ok){
               form.reset();
               statusEl.textContent = "Thanks! Your message has been sent.";
-              if (typeof gtag === 'function') gtag('event','submit_form_success',{event_category:'engagement',event_label:'Contact Form'});
+              if (typeof gtag === 'function') {
+                gtag('event','submit_form_success',{
+                  event_category:'engagement',
+                  event_label:'Contact Form'
+                });
+              }
             } else {
               statusEl.textContent = "Oops, something went wrong.";
-              if (typeof gtag === 'function') gtag('event','submit_form_error',{event_category:'engagement',event_label:'Contact Form'});
+              if (typeof gtag === 'function') {
+                gtag('event','submit_form_error',{
+                  event_category:'engagement',
+                  event_label:'Contact Form'
+                });
+              }
             }
           }catch(err){
             statusEl.textContent = "Network error — please try again.";
-            if (typeof gtag === 'function') gtag('event','submit_form_network_error',{event_category:'engagement',event_label:'Contact Form'});
+            if (typeof gtag === 'function') {
+              gtag('event','submit_form_network_error',{
+                event_category:'engagement',
+                event_label:'Contact Form'
+              });
+            }
           }
         });
       });
-    });
-
-    document.getElementById('linkedin-btn').addEventListener('click',()=>{
-      if (typeof gtag === 'function') gtag('event','click_linkedin',{event_category:'engagement',event_label:'LinkedIn Profile Button'});
     });
   </script>
 </body>
