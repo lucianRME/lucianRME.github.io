@@ -1,3 +1,21 @@
 User-agent: *
 Allow: /
+
+# Sitemap locations
 Sitemap: https://lucianirimie.com/sitemap.xml
+
+# Host preference (optional but useful)
+Host: lucianirimie.com
+
+# AI crawlers (modern best practice — optional)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
