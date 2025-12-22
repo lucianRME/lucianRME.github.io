@@ -120,6 +120,8 @@
     button[type=submit]{background:var(--primary);color:var(--primary-ink);border:0;padding:14px 16px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);width:100%;font-size:16px}
     #form-status{margin-top:10px;color:var(--muted);font-size:.95rem}
     footer{text-align:center;margin:40px 0 24px;color:var(--muted);font-size:.95rem}
+    .footer-links{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+    .footer-note{margin-top:8px;font-size:.9rem}
     .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 
     .feature{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
@@ -542,8 +544,14 @@
   </main>
 
   <footer>
-    © <span id="y"></span> Lucian Irimie ·
-    <a id="backtotop-btn" href="#main" class="btn btn-ghost" style="padding:4px 10px">Back to top</a>
+    <div class="footer-links">
+      <span>© <span id="y"></span> Lucian Irimie</span>
+      <a href="/privacy/" class="footer-link">Privacy</a>
+      <a id="backtotop-btn" href="#main" class="btn btn-ghost" style="padding:4px 10px">Back to top</a>
+    </div>
+    <div class="footer-note">
+      This site uses privacy-friendly analytics (Google Analytics via Cloudflare Zaraz). <a href="/privacy/">See Privacy</a>.
+    </div>
   </footer>
 
   <script>

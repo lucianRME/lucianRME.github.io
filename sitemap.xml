@@ -4,9 +4,17 @@
   <!-- Primary website -->
   <url>
     <loc>https://lucianirimie.com/</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://lucianirimie.com/privacy/</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Synapse Home (redirects to /landing or main UI) -->

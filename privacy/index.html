@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy – Lucian Irimie</title>
+  <meta name="description" content="Privacy policy for lucianirimie.com describing analytics, cookies, data sharing, and how to exercise your rights." />
+  <link rel="canonical" href="https://www.lucianirimie.com/privacy/" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Browser UI color on mobile -->
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+  <!-- Google Analytics (kept, but initialised after window load) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10FCSZC4RZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.addEventListener('load', function () {
+      gtag('js', new Date());
+      gtag('config', 'G-10FCSZC4RZ');
+    });
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-2: #10162e;
+      --card: #121829;
+      --text: #e8ecf6;
+      --muted: #a7b0c3;
+      --primary: #7ab8ff;
+      --primary-ink: #0b1020;
+      --stroke: #2a3350;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 820px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#ffffff; --bg-2:#f8f9fc; --card:#ffffff; --text:#1f2430; --muted:#5f6b84;
+        --primary:#1a73e8; --primary-ink:#ffffff; --stroke:#e6e8ef; --shadow:0 8px 24px rgba(0,0,0,.08);
+      }
+    }
+
+    html{color-scheme:light dark;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.65;
+      background:var(--bg); color:var(--text);
+      background-image:radial-gradient(1200px 600px at 10% -20%, #1a73e810, transparent);
+      min-height:100dvh;
+    }
+    .container{max-width:var(--max);margin:0 auto;padding:32px 18px 46px}
+    header{margin-bottom:22px}
+    h1{font-size:34px;margin:0 0 6px;font-weight:700;letter-spacing:.2px}
+    h2{font-size:20px;margin:0 0 10px;font-weight:700}
+    p{margin:0 0 12px}
+    a{color:var(--primary)}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:16px}
+    .muted{color:var(--muted);font-size:.95rem}
+    ul{margin:0 0 12px 18px}
+    li{margin-bottom:6px}
+    .back-link{display:inline-block;margin-top:10px;font-weight:700;text-decoration:none}
+    footer{text-align:center;margin:30px 0 10px;color:var(--muted);font-size:.95rem}
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 12px; }
+
+    @media (max-width: 520px){
+      h1{font-size:28px}
+      h2{font-size:19px}
+      .card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="back-link" href="/">&larr; Back to home</a>
+      <h1>Privacy Policy</h1>
+      <p class="muted">Last updated: 22 December 2025</p>
+    </header>
+
+    <div class="card">
+      <h2>Overview</h2>
+      <p>This site is operated by Lucian Irimie. I only collect limited, aggregated analytics to understand traffic and improve the site experience.</p>
+    </div>
+
+    <div class="card">
+      <h2>Data collected</h2>
+      <ul>
+        <li>Aggregated usage metrics (page views, device types, geography at region level) via Google Analytics, served through Cloudflare Zaraz.</li>
+        <li>Information you choose to submit through the contact form (name, email, message) so I can reply.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>How analytics works</h2>
+      <p>Google Analytics is loaded through Cloudflare Zaraz for performance and privacy. It is used only to understand site performance and engagement. Advertising and remarketing features are not enabled. Google Analytics may set cookies or anonymous identifiers for measurement, and Cloudflare Zaraz may be used for tag management.</p>
+    </div>
+
+    <div class="card">
+      <h2>Cookies and tracking</h2>
+      <p>The site uses essential cookies and analytics cookies from Google Analytics (via Cloudflare Zaraz) to measure visits. No advertising cookies, fingerprinting, or profiling are used.</p>
+    </div>
+
+    <div class="card">
+      <h2>Sharing and retention</h2>
+      <p>I do not sell your data. Analytics data is stored within Google Analytics and used in aggregate. Contact form submissions are retained only as needed to respond.</p>
+    </div>
+
+    <div class="card">
+      <h2>Your rights</h2>
+      <p>You can request access, correction, or deletion of your personal data. To exercise your rights or ask a privacy question, email <a href="mailto:privacy@lucianirimie.com">privacy@lucianirimie.com</a>.</p>
+    </div>
+
+    <footer>
+      <a href="/privacy/">Privacy</a> · <a href="/">lucianirimie.com</a>
+    </footer>
+  </div>
+</body>
+</html>
