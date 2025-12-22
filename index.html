@@ -37,17 +37,6 @@
   <!-- Preload hero image for faster LCP -->
   <link rel="preload" as="image" href="/Lucian%20Irimie.jpeg" fetchpriority="high" />
 
-  <!-- Google Analytics (kept, but initialised after window load) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10FCSZC4RZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    window.addEventListener('load', function () {
-      gtag('js', new Date());
-      gtag('config', 'G-10FCSZC4RZ');
-    });
-  </script>
-
   <style>
     :root {
       --bg: #0b1020;
@@ -561,15 +550,6 @@
     const statusEl = document.getElementById('form-status');
     const SITE_KEY = "6LeDFNQrAAAAAJNmV9dsK7zSvqdVnIaDoG09D2iT";
 
-    function trackClick(label) {
-      if (typeof gtag === 'function') {
-        gtag('event', 'cta_click', {
-          event_category: 'engagement',
-          event_label: label
-        });
-      }
-    }
-
     let recaptchaLoaded = false;
     function loadRecaptcha() {
       if (recaptchaLoaded) return;
@@ -581,42 +561,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      // HERO buttons
-      const heroDemo = document.getElementById('hero-demo-btn');
-      const heroGpt = document.getElementById('hero-gpt-btn');
-      const heroContact = document.getElementById('hero-contact-btn');
-
-      if (heroDemo) heroDemo.addEventListener('click', () => trackClick('demo_hero'));
-      if (heroGpt) heroGpt.addEventListener('click', () => trackClick('gpt_hero'));
-      if (heroContact) heroContact.addEventListener('click', () => trackClick('contact_hero'));
-
-      // Synapse section buttons
-      const synDemo = document.getElementById('synapse-demo-btn');
-      const synGpt = document.getElementById('synapse-gpt-btn');
-      const synPdf = document.getElementById('synapse-pdf-btn');
-
-      if (synDemo) synDemo.addEventListener('click', () => trackClick('demo_synapse_section'));
-      if (synGpt) synGpt.addEventListener('click', () => trackClick('gpt_synapse_section'));
-      if (synPdf) synPdf.addEventListener('click', () => trackClick('pdf_synapse_sample'));
-
-      // GPT Store section buttons
-      const gptOpen = document.getElementById('gpt-open-btn');
-      const gptDemo = document.getElementById('gpt-demo-btn');
-
-      if (gptOpen) gptOpen.addEventListener('click', () => trackClick('gpt_store_section_open'));
-      if (gptDemo) gptDemo.addEventListener('click', () => trackClick('gpt_store_section_to_demo'));
-
-      // Networking section buttons
-      const netLinkedIn = document.getElementById('network-linkedin-btn');
-      const netContact = document.getElementById('network-contact-btn');
-
-      if (netLinkedIn) netLinkedIn.addEventListener('click', () => trackClick('network_linkedin'));
-      if (netContact) netContact.addEventListener('click', () => trackClick('network_contact'));
-
-      // Footer back to top
-      const backToTop = document.getElementById('backtotop-btn');
-      if (backToTop) backToTop.addEventListener('click', () => trackClick('back_to_top'));
-
       // Lazy-load reCAPTCHA when contact section is near or form focused
       const contactSection = document.getElementById('contact');
       if ('IntersectionObserver' in window && contactSection) {
@@ -647,29 +591,11 @@
             if(r.ok){
               form.reset();
               statusEl.textContent = "Thanks! Your message has been sent.";
-              if (typeof gtag === 'function') {
-                gtag('event','submit_form_success',{
-                  event_category:'engagement',
-                  event_label:'Contact Form'
-                });
-              }
             } else {
               statusEl.textContent = "Oops, something went wrong.";
-              if (typeof gtag === 'function') {
-                gtag('event','submit_form_error',{
-                  event_category:'engagement',
-                  event_label:'Contact Form'
-                });
-              }
             }
           }catch(err){
             statusEl.textContent = "Network error — please try again.";
-            if (typeof gtag === 'function') {
-              gtag('event','submit_form_network_error',{
-                event_category:'engagement',
-                event_label:'Contact Form'
-              });
-            }
           }
         });
       });
