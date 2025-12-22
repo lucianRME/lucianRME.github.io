@@ -580,6 +580,17 @@
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
+      ['name','email','message'].forEach(id => {
+        const field = document.getElementById(id);
+        if (field && typeof field.value === 'string') field.value = field.value.trim();
+      });
+
+      if (!form.checkValidity()) {
+        statusEl.textContent = "Please complete the required fields.";
+        form.reportValidity();
+        return;
+      }
+
       statusEl.textContent = "Sending…";
       loadRecaptcha();
       if (typeof grecaptcha === 'undefined') { statusEl.textContent = 'reCAPTCHA not loaded. Please retry in a moment.'; return; }
