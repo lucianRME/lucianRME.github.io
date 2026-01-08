@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Lucian Irimie – Agile & AI Delivery (Dublin)</title>
-  <meta name="description" content="Agile Delivery Leader in Dublin using Generative AI (LLMs) to accelerate delivery: meeting transcripts → requirements & BDD → Jira. Featured project: Synapse Works. Live demo available. 10+ years in Agile/SAFe, Delivery Management, DevOps." />
+  <title>Lucian Irimie – Technical Program Manager (Dublin)</title>
+  <meta name="description" content="Technical Program Manager in Dublin focused on end-to-end technology delivery, delivery governance and release readiness across complex enterprise programmes. Creator of Synapse Works. Live demo available." />
   <meta name="build" content="90d4d88ec116fb1e190eb2fcb6f3ce46f910c102" />
   <link rel="canonical" href="https://www.lucianirimie.com/" />
   <meta name="robots" content="index,follow" />
-  <meta name="keywords" content="Agile & AI Delivery Leader based in Dublin. Helping teams deliver faster and smarter with automation, GenAI, and practical Agile methods." />
+  <meta name="keywords" content="Technical Program Manager Dublin, Programme Manager Dublin, Technology Delivery, Delivery Governance, Release Readiness, Jira, Requirements, Stakeholder Management, Retail Technology, Payments, Synapse Works" />
   <meta name="built-with" content="HTML, CSS • Static hosting • Formspree • reCAPTCHA • Cloudflare" />
 
   <!-- Browser UI color on mobile -->
@@ -17,8 +17,8 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lucian Irimie — Agile Delivery Leader | GenAI & LLM-Enabled Delivery" />
-  <meta property="og:description" content="Background, featured AI project (Synapse Works), live demo and contact." />
+  <meta property="og:title" content="Lucian Irimie — Technical Program Manager" />
+  <meta property="og:description" content="End-to-end technology delivery, delivery governance and release readiness. Creator of Synapse Works." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lucianirimie.com/" />
   <meta property="og:image" content="https://www.lucianirimie.com/Lucian%20Irimie.jpeg" />
@@ -76,11 +76,11 @@
     .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow)}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
     h1{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size:34px;margin:0 0 6px;letter-spacing:.2px;font-weight:700;
     }
-    .subtitle{color:var(--muted);margin:0 0 12px}
-    .tagline{margin:0 0 16px; font-weight:600}
+    .subtitle{color:var(--muted);margin:0 0 10px}
+    .tagline{margin:0 0 14px; font-weight:650}
+    .microline{margin:0;color:var(--muted);font-size:.95rem}
 
     .btns{display:flex;flex-wrap:wrap;gap:10px}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid var(--stroke);transition:transform .06s ease; min-height:44px}
@@ -88,18 +88,31 @@
     .btn-primary{background:var(--primary);color:var(--primary-ink);box-shadow:var(--shadow);border:0}
     .btn-ghost{background:transparent;color:var(--text)}
 
-    main section{margin-top:28px}
-    .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    h2{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size:22px;margin:0 0 12px;font-weight:700;
-    }
+    main section{margin-top:22px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    h2{font-size:20px;margin:0 0 10px;font-weight:700;}
 
-    .grid{display:grid;gap:18px}
-    @media (min-width: 820px){ .grid{grid-template-columns:1.1fr .9fr} }
+    .grid{display:grid;gap:16px}
+    @media (min-width: 820px){ .grid{grid-template-columns:1.2fr .8fr} }
 
-    .badges{display:flex;gap:12px;flex-wrap:wrap}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
     .badge{padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;font-size:.9rem;color:var(--muted)}
+
+    ul{margin:10px 0 0 20px}
+    li{margin:6px 0}
+
+    .kpis{display:grid;gap:12px;margin-top:10px}
+    @media (min-width: 720px){ .kpis{grid-template-columns:repeat(3,1fr)} }
+    .kpi{
+      border:1px solid var(--stroke); border-radius:14px; padding:12px 14px;
+      background:linear-gradient(180deg,transparent,transparent 60%, var(--bg-2));
+    }
+    .kpi strong{display:block;font-size:1.05rem}
+    .kpi span{color:var(--muted);font-size:.9rem}
+
+    .feature{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+    .feature-media{width:120px;height:100px;border-radius:12px;border:1px solid var(--stroke);overflow:hidden}
+    .feature-media img{width:100%;height:100%;object-fit:cover;display:block}
 
     form{max-width:520px;margin-top:8px}
     .field{margin:12px 0}
@@ -108,18 +121,11 @@
     input::placeholder,textarea::placeholder{color:var(--muted)}
     button[type=submit]{background:var(--primary);color:var(--primary-ink);border:0;padding:14px 16px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);width:100%;font-size:16px}
     #form-status{margin-top:10px;color:var(--muted);font-size:.95rem}
+
     footer{text-align:center;margin:40px 0 24px;color:var(--muted);font-size:.95rem}
     .footer-links{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
     .footer-note{margin-top:8px;font-size:.9rem}
     .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-
-    .feature{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
-    .feature-media{width:120px;height:120px;border-radius:12px;border:1px solid var(--stroke);overflow:hidden}
-    .feature-media img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .table{width:100%;border-collapse:separate;border-spacing:0}
-    .table th,.table td{border:1px solid var(--stroke);padding:10px 12px}
-    .table th{background:var(--bg-2);text-align:left}
 
     :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 12px; }
 
@@ -144,7 +150,7 @@
     }
   </style>
 
-  <!-- JSON-LD: Person + SoftwareApplication (Synapse Works) + SoftwareApplication (Synapse Works Demo) + FAQ -->
+  <!-- JSON-LD: Person + SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -152,25 +158,19 @@
       {
         "@type":"Person",
         "name":"Lucian Irimie",
-        "jobTitle":"Agile Delivery Leader",
+        "jobTitle":"Technical Program Manager",
         "url":"https://www.lucianirimie.com",
         "image":"https://www.lucianirimie.com/Lucian%20Irimie.jpeg",
-        "description":"Agile Delivery Leader in Dublin with 10+ years driving Agile/SAFe, delivery management, and DevOps transformation.",
+        "description":"Technical Program Manager in Dublin focused on end-to-end technology delivery, delivery governance and release readiness across complex enterprise programmes.",
         "sameAs":[
           "https://www.linkedin.com/in/lucianirimie/",
-          "https://www.credly.com/users/lucian-irimie.75845f88",
-          "https://skillsoft.digitalbadges.skillsoft.com/profile/lucianirimie411400/wallet"
+          "https://www.credly.com/users/lucian-irimie.75845f88"
         ],
         "address":{
           "@type":"PostalAddress",
           "addressLocality":"Dublin",
           "addressCountry":"Ireland"
-        },
-        "alumniOf":[
-          {"@type":"CollegeOrUniversity","name":"Rushford Business School","address":{"@type":"PostalAddress","addressCountry":"Switzerland"},"educationalCredentialAwarded":"MBA"},
-          {"@type":"CollegeOrUniversity","name":"Technical University of Cluj-Napoca","address":{"@type":"PostalAddress","addressCountry":"Romania"},"educationalCredentialAwarded":"MSc"},
-          {"@type":"CollegeOrUniversity","name":"University of Oradea","address":{"@type":"PostalAddress","addressCountry":"Romania"},"educationalCredentialAwarded":"BEng"}
-        ]
+        }
       },
       {
         "@type": "SoftwareApplication",
@@ -179,58 +179,8 @@
         "operatingSystem": "Web",
         "url": "https://synapseworks.org/synapse/landing",
         "creator": {"@type": "Person", "name": "Lucian Irimie", "url":"https://www.lucianirimie.com"},
-        "description": "Synapse Works converts meeting notes into user stories, acceptance criteria, and BDD-ready outputs with optional Jira Cloud sync.",
+        "description": "Synapse Works converts meeting notes into structured requirements and BDD-ready outputs with optional Jira Cloud sync.",
         "offers": {"@type":"Offer","price":"0","priceCurrency":"EUR"}
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Synapse Works Demo",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "url": "https://synapseworks.org/synapse/demo",
-        "creator": {
-          "@type": "Person",
-          "name": "Lucian Irimie",
-          "url": "https://www.lucianirimie.com"
-        },
-        "description": "Live demo hosted on synapseworks.org showing the Synapse Works pipeline with optional Jira Cloud sync."
-      },
-      {
-        "@type":"FAQPage",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"What is GenAI-enabled Agile Delivery?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Using Generative AI and LLMs to speed requirements analysis, generate BDD tests, and automate Jira workflows while preserving Agile/SAFe governance."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"How do LLMs help with requirements and BDD?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"LLMs convert meeting transcripts and notes into structured user stories and BDD scenarios, improving clarity and shortening cycle times."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Can GenAI integrate with Jira?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Yes. Synapse Works integrates with Jira Cloud so that generated requirements and BDD test cases can be synced with idempotent updates and links for governance."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"What does Synapse Works include?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"A guided workflow: ingest transcript snippets, generate user stories and acceptance criteria, draft BDD scenarios, and produce export-ready summaries. The Synapse Works Demo adds a UI and optional Jira Cloud sync using your own credentials for that session only, hosted on synapseworks.org."
-            }
-          }
-        ]
       }
     ]
   }
@@ -244,39 +194,26 @@
         <div class="avatar" aria-hidden="true">
           <img src="/Lucian%20Irimie.jpeg" alt="Portrait of Lucian Irimie" width="120" height="120" loading="eager" />
         </div>
+
         <div>
           <h1>Lucian Irimie</h1>
-          <p class="subtitle">Agile Delivery Leader • Dublin, Ireland</p>
-          <p class="tagline">Applying GenAI & LLM-enabled delivery practices to real enterprise workflows.</p>
+          <p class="subtitle">Technical Program Manager • Dublin, Ireland</p>
+          <p class="tagline">End-to-end delivery governance for complex technology programmes.</p>
+
           <div class="btns">
-            <a
-              class="btn btn-primary"
-              id="hero-demo-btn"
-              href="https://synapseworks.org/synapse/landing"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn btn-primary" id="hero-demo-btn" href="https://synapseworks.org/synapse/landing" target="_blank" rel="noopener">
               Synapse Works Demo
             </a>
-            <a
-              class="btn btn-ghost"
-              id="hero-gpt-btn"
-              href="https://synapseworks.org/synapse/demo"
-              target="_blank"
-              rel="noopener"
-            >
-              Open Demo
-            </a>
-            <a
-              class="btn btn-ghost"
-              id="hero-contact-btn"
-              href="#contact"
-            >
+            <a class="btn btn-ghost" id="hero-contact-btn" href="#contact">
               Contact
             </a>
+            <a class="btn btn-ghost" id="hero-linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
           </div>
-          <p style="margin-top:6px; color:var(--muted); font-size:.9rem;">
-            No signup · No installation · Runs in browser
+
+          <p class="microline" style="margin-top:8px;">
+            Retail Tech • Payments • Travel Tech • Release readiness • Jira workflows • Requirements clarity
           </p>
         </div>
       </div>
@@ -285,130 +222,82 @@
 
   <main class="container" id="main">
 
-    <!-- About / Business Card -->
-    <section id="about-lucian" class="card">
-      <h2>About Lucian</h2>
-      <p>
-        Agile Delivery Leader applying Generative AI to improve requirements clarity, BDD coverage and delivery flow across Retail,
-        Fintech and Travel Tech. Focused on practical improvement, predictable execution and reduced delivery waste.
-      </p>
-      <div class="badges" aria-label="Highlights">
-        <span class="badge">Agile & AI Delivery</span>
-        <span class="badge">Synapse creator</span>
-        <span class="badge">MBA</span>
-        <span class="badge">SAFe 6 POPM</span>
-      </div>
-    </section>
-
-    <!-- Featured Project -->
-    <section id="synapse" class="card">
-      <h2>Featured project — Synapse Works</h2>
-      <div class="feature">
-        <div class="feature-media" aria-hidden="true">
-          <img src="/synapse-preview.png" alt="Synapse Works UI preview" loading="lazy" width="560" height="360" />
-        </div>
+    <!-- One-screen overview (senior, minimal) -->
+    <section class="card" id="overview">
+      <h2>Overview</h2>
+      <div class="grid">
         <div>
-          <p>Synapse Works (separate product site) turns meeting notes into user stories, acceptance criteria, and BDD-ready outputs with optional Jira Cloud sync.</p>
-          <p>Built to shorten refinement and improve backlog clarity without changing existing ways of working or storing enterprise data.</p>
-          <div class="btns" style="margin-top:10px">
-            <a
-              class="btn btn-primary"
-              id="synapse-demo-btn"
-              href="https://synapseworks.org/synapse/landing"
-              target="_blank"
-              rel="noopener"
-            >
-              Synapse Works Demo
-            </a>
-            <a
-              class="btn btn-ghost"
-              id="synapse-gpt-btn"
-              href="https://synapseworks.org/synapse/demo"
-              target="_blank"
-              rel="noopener"
-            >
-              Open Demo
-            </a>
+          <p>
+            I help teams deliver predictably in high-volume environments: clarifying requirements, aligning stakeholders, managing
+            dependencies and risk, and keeping a steady release cadence across multiple workstreams.
+          </p>
+
+          <div class="badges" aria-label="Focus areas" style="margin-top:10px">
+            <span class="badge">Delivery governance</span>
+            <span class="badge">Release readiness</span>
+            <span class="badge">Cross-team dependencies</span>
+            <span class="badge">Jira visibility</span>
           </div>
-          <p class="subtitle" style="margin-top:10px">
-            Hosted on synapseworks.org — external to this personal site.
+        </div>
+
+        <div>
+          <p class="subtitle" style="margin-top:0;">
+            Selected outcomes
+          </p>
+          <div class="kpis" aria-label="Selected outcomes">
+            <div class="kpi">
+              <strong>~40% faster lead time</strong>
+              <span>Flow improvements & WIP control</span>
+            </div>
+            <div class="kpi">
+              <strong>Release cadence ↑</strong>
+              <span>From quarterly towards sprint rhythm</span>
+            </div>
+            <div class="kpi">
+              <strong>~80% less reporting effort</strong>
+              <span>Automated Jira visibility</span>
+            </div>
+          </div>
+          <p class="microline" style="margin-top:8px;">
+            Metrics are indicative; impact varies by programme context.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Professional Networking & Collaboration -->
-    <section class="card" id="recruiters">
-      <h2>Professional Networking & Collaboration</h2>
-      <p>
-        I’m open to connecting with organisations and leaders interested in GenAI-enabled delivery, requirements acceleration,
-        BDD adoption and practical Agile improvement. Happy to share insights, demonstrate Synapse Works, contribute to thought
-        leadership, or explore future collaboration opportunities.
-      </p>
-
-      <ul>
-        <li>Expert conversations on Agile & AI-enabled delivery practices</li>
-        <li>Synapse Works demo sessions for product, delivery or technology teams</li>
-        <li>Advisory discussions on requirements, BDD and Jira readiness</li>
-        <li>Industry networking in Dublin and across Europe</li>
-        <li>Speaking opportunities on GenAI in delivery and transformation</li>
-      </ul>
-
-      <div class="btns" style="margin-top:14px">
-        <a
-          class="btn btn-primary"
-          id="network-linkedin-btn"
-          href="https://www.linkedin.com/in/lucianirimie/"
-          target="_blank"
-          rel="noopener"
-        >
-          Connect on LinkedIn
-        </a>
-        <a
-          class="btn btn-ghost"
-          id="network-contact-btn"
-          href="#contact"
-        >
-          Request a demo or conversation
-        </a>
+    <!-- Featured project (short, not salesy) -->
+    <section class="card" id="synapse">
+      <h2>Synapse Works</h2>
+      <div class="feature">
+        <div class="feature-media" aria-hidden="true">
+          <img src="/synapse-preview.png" alt="Synapse Works UI preview" loading="lazy" width="560" height="360" />
+        </div>
+        <div>
+          <p style="margin:0 0 8px;">
+            Independent demo: meeting notes → structured requirements and BDD-ready outputs, with optional Jira Cloud sync.
+          </p>
+          <div class="btns">
+            <a class="btn btn-primary" id="synapse-demo-btn" href="https://synapseworks.org/synapse/landing" target="_blank" rel="noopener">
+              Open demo
+            </a>
+            <a class="btn btn-ghost" id="synapse-gpt-btn" href="https://synapseworks.org/synapse/demo" target="_blank" rel="noopener">
+              Alternate demo
+            </a>
+          </div>
+          <p class="microline" style="margin-top:8px;">
+            Hosted on synapseworks.org (separate site).
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- GenAI / LLM Section -->
-    <section class="card" aria-labelledby="genai-title">
-      <h2 id="genai-title">GenAI & LLM-Enabled Delivery</h2>
-      <p>
-        I apply <strong>Generative AI</strong> and <strong>Large Language Models (LLMs)</strong> to accelerate Agile delivery:
-        <strong>requirements analysis</strong>, <strong>BDD test generation</strong>, and <strong>one-click Jira sync</strong>.
-        This complements Disciplined Agile Delivery in large programmes (Retail, Payments, Workday).
-      </p>
-      <ul>
-        <li>LLM pipeline for <em>requirements → BDD</em> (Synapse Works) integrated with Jira Cloud</li>
-        <li>GenAI-assisted backlog hygiene, acceptance criteria, and test coverage</li>
-        <li>LLM-based summaries to speed up governance & decision-making</li>
-      </ul>
-    </section>
-
-    <!-- Credentials & Education (grouped) -->
-    <section class="card" id="credentials">
-      <h2>Credentials & Education</h2>
-
-      <p>
-        <strong>Education</strong><br>
-        MBA – Rushford Business School, Switzerland<br>
-        MSc – Technical University of Cluj-Napoca, Romania<br>
-        BEng – University of Oradea, Romania
-      </p>
-
-      <p>
-        <strong>Professional certifications</strong><br>
-        SAFe POPM · ISTQB CTAL-TM · PRINCE2 · ScrumMaster (CSM)
-      </p>
-    </section>
-
-    <!-- Contact -->
+    <!-- Contact (simple CTA) -->
     <section id="contact" class="card" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
+      <p class="subtitle" style="margin-top:0;">
+        For delivery governance, release readiness, Jira visibility, or a short Synapse Works walkthrough.
+      </p>
+
       <form action="https://formspree.io/f/movngale" method="POST" id="contact-form" novalidate>
         <input type="hidden" name="_subject" value="New message from lucianirimie.com">
         <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -442,6 +331,9 @@
       <span>© <span id="y"></span> Lucian Irimie</span>
       <a href="/privacy/" class="footer-link">Privacy</a>
       <a id="backtotop-btn" href="#main" class="btn btn-ghost" style="padding:4px 10px">Back to top</a>
+    </div>
+    <div class="footer-note">
+      MBA, MSc • SAFe POPM • PRINCE2 • ISTQB CTAL-TM • <a href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="footer-note">
       This site uses privacy-friendly analytics (Google Analytics via Cloudflare Zaraz). <a href="/privacy/">See Privacy</a>.
