@@ -2,10 +2,10 @@ User-agent: *
 Allow: /
 
 # Sitemap locations
-Sitemap: https://lucianirimie.com/sitemap.xml
+Sitemap: https://www.lucianirimie.com/sitemap.xml
 
 # Host preference (optional but useful)
-Host: lucianirimie.com
+Host: www.lucianirimie.com
 
 # AI crawlers (modern best practice — optional)
 User-agent: GPTBot
