@@ -1,0 +1,4 @@
+Contact: mailto:postmaster@lucianirimie.com
+Expires: 2027-04-16T00:00:00Z
+Preferred-Languages: en
+Canonical: https://www.lucianirimie.com/.well-known/security.txt
