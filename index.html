@@ -21,7 +21,7 @@
   <meta property="og:description" content="Technical Program Manager in Dublin focused on enterprise platforms, delivery governance, AI transformation, and privacy-first software products." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lucianirimie.com/" />
-  <meta property="og:image" content="https://www.lucianirimie.com/Lucian%20Irimie.jpeg" />
+  <meta property="og:image" content="https://www.lucianirimie.com/lucian-irimie-dublin.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="1200" />
   <meta property="og:site_name" content="Lucian Irimie" />
@@ -34,7 +34,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
   <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="/Lucian%20Irimie.jpeg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/lucian-irimie-dublin.jpg" fetchpriority="high" />
 
   <style>
     :root {
@@ -219,6 +219,14 @@
       font-weight: 800;
       letter-spacing: 0;
       text-transform: uppercase;
+    }
+
+    .identity-line {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 650;
+      letter-spacing: .01em;
     }
 
     h1,
@@ -706,18 +714,35 @@
     }
   </style>
 
-  <!-- JSON-LD: Person + SoftwareApplication -->
+  <!-- JSON-LD: WebSite + ProfilePage + Person + SoftwareApplication -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
       {
+        "@id":"https://www.lucianirimie.com/#website",
+        "@type":"WebSite",
+        "name":"Lucian Irimie",
+        "url":"https://www.lucianirimie.com/",
+        "publisher":{"@id":"https://www.lucianirimie.com/#person"}
+      },
+      {
+        "@id":"https://www.lucianirimie.com/#profile",
+        "@type":"ProfilePage",
+        "url":"https://www.lucianirimie.com/",
+        "name":"Lucian Irimie, Technical Program Manager in Dublin, Ireland",
+        "isPartOf":{"@id":"https://www.lucianirimie.com/#website"},
+        "mainEntity":{"@id":"https://www.lucianirimie.com/#person"}
+      },
+      {
+        "@id":"https://www.lucianirimie.com/#person",
         "@type":"Person",
         "name":"Lucian Irimie",
         "jobTitle":"Technical Program Manager",
-        "url":"https://www.lucianirimie.com",
-        "image":"https://www.lucianirimie.com/Lucian%20Irimie.jpeg",
+        "url":"https://www.lucianirimie.com/",
+        "image":"https://www.lucianirimie.com/lucian-irimie-dublin.jpg",
         "description":"Technical Program Manager in Dublin focused on delivery governance, platform enablement, enterprise AI, and practical workflow tooling.",
+        "mainEntityOfPage":{"@id":"https://www.lucianirimie.com/#profile"},
         "knowsAbout":[
           "Delivery governance",
           "Platform enablement",
@@ -741,7 +766,7 @@
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "url": "https://synapseworks.org",
-        "creator": {"@type": "Person", "name": "Lucian Irimie", "url":"https://www.lucianirimie.com"},
+        "creator":{"@id":"https://www.lucianirimie.com/#person"},
         "description": "SynapseWorks is a product and tooling home for delivery governance, AI-enabled workflow refinement, and Jira-oriented productivity tools.",
         "offers": {"@type":"Offer","price":"0","priceCurrency":"EUR"}
       }
@@ -770,6 +795,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div>
           <p class="eyebrow">Technical Program Manager • Enterprise Platforms • Delivery Governance</p>
+          <p class="identity-line">Lucian Irimie · Technical Program Manager · Dublin, Ireland</p>
           <h1 id="hero-title">Technical Program Manager focused on delivery governance, platform enablement, and enterprise AI.</h1>
           <p class="hero-lede">
             I work at the intersection of enterprise delivery, workflow governance, and AI-enabled tooling - helping teams improve prioritisation, visibility, release readiness, and decision flow.
@@ -789,7 +815,7 @@
         </div>
 
         <aside class="profile-card" aria-label="Profile summary">
-          <img src="/Lucian%20Irimie.jpeg" alt="Portrait of Lucian Irimie" width="1200" height="1200" loading="eager" />
+          <img src="/lucian-irimie-dublin.jpg" alt="Lucian Irimie, Technical Program Manager in Dublin, Ireland" width="1200" height="1200" loading="eager" />
           <p>
             <strong>Practical delivery leadership.</strong>
             Dublin, Ireland • Retail tech, payments, travel tech, platform teams, release governance, and decision flow.
