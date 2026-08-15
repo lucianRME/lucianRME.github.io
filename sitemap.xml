@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Primary website -->
   <url>
     <loc>https://www.lucianirimie.com/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Privacy Policy -->
   <url>
     <loc>https://www.lucianirimie.com/privacy/</loc>
     <lastmod>2026-04-08</lastmod>
