@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Lucian Irimie | Enterprise Technology Delivery &amp; Platforms</title>
-  <meta name="description" content="Technical Program Manager working across enterprise platforms, delivery governance, technology transformation and applied AI." />
-  <meta name="build" content="a409240b65177b49a47c2c579f7b86a7888f510a" />
+  <meta name="description" content="Technical Program Manager leading complex technology programmes across enterprise platforms, transformation and applied AI." />
   <link rel="canonical" href="https://www.lucianirimie.com/" />
   <meta name="robots" content="index,follow" />
-  <meta name="keywords" content="Technical Program Manager Dublin, Enterprise Platforms, Delivery Governance, Technology Transformation, Applied AI, Platform Operating Models, SynapseWorks" />
   <meta name="built-with" content="HTML, CSS • Static hosting • Cloudflare" />
 
   <!-- Browser UI color on mobile -->
@@ -18,14 +16,22 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lucian Irimie | Enterprise Technology Delivery &amp; Platforms" />
-  <meta property="og:description" content="Technical Program Manager working across enterprise platforms, delivery governance, technology transformation and applied AI." />
+  <meta property="og:description" content="Technical Program Manager leading complex technology programmes across enterprise platforms, transformation and applied AI." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lucianirimie.com/" />
   <meta property="og:image" content="https://www.lucianirimie.com/lucian-irimie-dublin.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Lucian Irimie, Technical Program Manager in Dublin, Ireland" />
   <meta property="og:site_name" content="Lucian Irimie" />
   <meta property="og:locale" content="en_IE" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lucian Irimie | Enterprise Technology Delivery &amp; Platforms" />
+  <meta name="twitter:description" content="Technical Program Manager leading complex technology programmes across enterprise platforms, transformation and applied AI." />
+  <meta name="twitter:image" content="https://www.lucianirimie.com/lucian-irimie-dublin.jpg" />
+  <meta name="twitter:image:alt" content="Lucian Irimie, Technical Program Manager in Dublin, Ireland" />
 
   <!-- Professional links -->
   <meta property="og:see_also" content="https://www.linkedin.com/in/lucianirimie/" />
@@ -403,6 +409,44 @@
       font-size: .92rem;
     }
 
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .impact-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .impact-card h3 {
+      margin-bottom: 18px;
+      font-size: 1.24rem;
+      line-height: 1.25;
+    }
+
+    .impact-card dl {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .impact-card dt {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .impact-card dd {
+      margin: 3px 0 0;
+      color: var(--muted);
+    }
+
     .work-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -452,6 +496,28 @@
 
     .work-card .card-actions {
       margin-top: auto;
+    }
+
+    .product-proof {
+      align-self: stretch;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
+    }
+
+    .product-proof strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .product-proof ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: .92rem;
     }
 
     .work-meta {
@@ -579,14 +645,24 @@
     }
 
     .footer-links a,
-    .footer-note a {
+    .footer-note a,
+    .footer-button {
       color: var(--muted);
       font-weight: 650;
       text-decoration: none;
     }
 
+    .footer-button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+    }
+
     .footer-links a:hover,
-    .footer-note a:hover {
+    .footer-note a:hover,
+    .footer-button:hover {
       color: var(--ink);
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -680,6 +756,7 @@
       }
 
       .signal-grid,
+      .impact-grid,
       .work-grid {
         grid-template-columns: 1fr;
       }
@@ -741,7 +818,7 @@
         "jobTitle":"Technical Program Manager",
         "url":"https://www.lucianirimie.com/",
         "image":"https://www.lucianirimie.com/lucian-irimie-dublin.jpg",
-        "description":"Technical Program Manager working across enterprise platforms, delivery governance, technology transformation and applied AI.",
+        "description":"Technical Program Manager leading complex technology programmes across enterprise platforms, transformation and applied AI.",
         "mainEntityOfPage":{"@id":"https://www.lucianirimie.com/#profile"},
         "knowsAbout":[
           "Delivery governance",
@@ -777,8 +854,8 @@
           <span>Lucian Irimie</span>
         </a>
         <div class="nav-links">
-          <a href="#areas">Areas of focus</a>
-          <a href="#experience">Experience</a>
+          <a href="#impact">Delivery impact</a>
+          <a href="#capabilities">Capabilities</a>
           <a href="#products">Product work</a>
           <a href="#contact">Contact</a>
         </div>
@@ -788,20 +865,17 @@
         <div>
           <p class="eyebrow">Technical Program Manager • Enterprise Platforms • Delivery Governance</p>
           <p class="identity-line">Lucian Irimie · Technical Program Manager · Dublin, Ireland</p>
-          <h1 id="hero-title">Leading complex technology delivery across enterprise platforms, transformation and AI.</h1>
+          <h1 id="hero-title">Leading complex technology programmes across enterprise platforms, transformation and applied AI.</h1>
           <p class="hero-lede">
-            I help business and engineering teams make complex delivery easier to run: clearer priorities, dependencies, governance and decisions. My work spans enterprise platforms, technology transformation and applied AI.
+            I bring business and engineering teams around clear outcomes, ownership, dependencies and release decisions&mdash;helping complex platform change move from strategy to reliable delivery.
           </p>
 
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="btn btn-primary" id="hero-linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">
+            <a class="btn btn-primary" id="hero-contact-btn" href="mailto:contact@lucianirimie.com">
+              Discuss technology delivery
+            </a>
+            <a class="btn btn-secondary" id="hero-linkedin-btn" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">
               LinkedIn
-            </a>
-            <a class="btn btn-secondary" id="hero-contact-btn" href="mailto:contact@lucianirimie.com">
-              Contact
-            </a>
-            <a class="btn btn-secondary" id="hero-synapseworks-btn" href="https://synapseworks.org" target="_blank" rel="noopener">
-              SynapseWorks
             </a>
           </div>
         </div>
@@ -809,8 +883,8 @@
         <aside class="profile-card" aria-label="Profile summary">
           <img src="/lucian-irimie-dublin.jpg" alt="Lucian Irimie, Technical Program Manager in Dublin, Ireland" width="1200" height="1200" loading="eager" />
           <p>
-            <strong>Enterprise delivery and product building.</strong>
-            Dublin, Ireland • Technology delivery, platform change, governance and practical software.
+            <strong>Enterprise technology delivery.</strong>
+            Dublin, Ireland • Platform change, governance, transformation and end-to-end ownership.
           </p>
         </aside>
       </section>
@@ -818,52 +892,52 @@
   </header>
 
   <main id="main">
-    <section class="section credibility-strip" id="areas" aria-labelledby="areas-title">
+    <section class="section credibility-strip" id="impact" aria-labelledby="impact-title">
       <div class="container">
         <div class="section-header">
           <div>
-            <p class="eyebrow">Areas of focus</p>
-            <h2 id="areas-title">The work of making complex delivery workable.</h2>
+            <p class="eyebrow">Selected delivery impact</p>
+            <h2 id="impact-title">Making complex programmes easier to run.</h2>
           </div>
-          <p>Distinct but connected areas of work across enterprise platforms, business outcomes and the way teams operate.</p>
+          <p>Experience across retail technology, payments, travel technology and platform teams, focused on the operating conditions that support dependable delivery.</p>
         </div>
-        <div class="signal-grid">
-          <div class="signal">
-            <strong>Enterprise delivery</strong>
-            <span>Turning complex programmes into clearer priorities, ownership, dependencies and delivery decisions.</span>
-          </div>
-          <div class="signal">
-            <strong>Platform operating models</strong>
-            <span>Creating governance and ways of working that help teams move without unnecessary process.</span>
-          </div>
-          <div class="signal">
-            <strong>Technology transformation</strong>
-            <span>Connecting business outcomes, engineering delivery and organisational change across enterprise platforms.</span>
-          </div>
-          <div class="signal">
-            <strong>Applied AI</strong>
-            <span>Exploring practical uses of AI in delivery, governance and workflow design where there is operational value.</span>
-          </div>
+        <div class="impact-grid">
+          <article class="impact-card">
+            <h3>Enterprise delivery across shared platforms</h3>
+            <dl>
+              <div><dt>Context</dt><dd>Work across retail technology and payments environments, coordinating business and engineering delivery across shared platforms.</dd></div>
+              <div><dt>Challenge</dt><dd>Priorities, dependencies, ownership and release decisions need to remain visible across complex delivery.</dd></div>
+              <div><dt>Role and action</dt><dd>Brought business context, engineering delivery, readiness checks and escalation paths into a clearer governance rhythm.</dd></div>
+              <div><dt>Delivery outcome</dt><dd>Clearer ownership, risk visibility and release decision-making for the teams involved.</dd></div>
+            </dl>
+          </article>
+          <article class="impact-card">
+            <h3>Platform change and operating models</h3>
+            <dl>
+              <div><dt>Context</dt><dd>Work across travel technology and platform-team environments, with platform change and organisational dependencies in view.</dd></div>
+              <div><dt>Challenge</dt><dd>Reusable delivery patterns must support the work without creating unnecessary process.</dd></div>
+              <div><dt>Role and action</dt><dd>Helped shape intake, review forums, delivery rhythms and release guardrails around the needs of the platform.</dd></div>
+              <div><dt>Delivery outcome</dt><dd>A more workable operating model for coordinating priorities, risks and decisions over time.</dd></div>
+            </dl>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="experience" aria-labelledby="experience-title">
+    <section class="section" id="capabilities" aria-labelledby="capabilities-title">
       <div class="container">
         <div class="section-header">
           <div>
-            <p class="eyebrow">Experience &amp; impact</p>
-            <h2 id="experience-title">Delivery leadership in complex operating environments.</h2>
+            <p class="eyebrow">Leadership capabilities</p>
+            <h2 id="capabilities-title">Connecting outcomes, teams and delivery decisions.</h2>
           </div>
-          <p>
-            Work across retail technology, payments, travel technology and platform teams, with a consistent focus on coordination, release readiness and decision-making.
-          </p>
+          <p>Reusable strengths that support enterprise programme execution, technology transformation and responsible adoption of applied AI.</p>
         </div>
         <div class="signal-grid">
-          <div class="signal"><strong>Cross-functional coordination</strong><span>Bringing business context, engineering delivery, dependencies and decisions together across shared platforms.</span></div>
-          <div class="signal"><strong>Delivery governance</strong><span>Defining ownership, readiness checks and escalation paths so complex work can be run with confidence.</span></div>
-          <div class="signal"><strong>Platform enablement</strong><span>Helping platform teams establish reusable patterns, effective intake and delivery rhythms that fit the work.</span></div>
-          <div class="signal"><strong>Operational improvement</strong><span>Making priorities, risks and delivery decisions more visible through workflow design, review forums and release guardrails.</span></div>
+          <div class="signal"><strong>Programme leadership</strong><span>Aligning business outcomes, engineering delivery, ownership and dependencies across shared platforms.</span></div>
+          <div class="signal"><strong>Governance and readiness</strong><span>Making risks, escalation paths and release decisions visible at the point they matter.</span></div>
+          <div class="signal"><strong>Transformation delivery</strong><span>Connecting platform strategy, operating-model change and practical execution over time.</span></div>
+          <div class="signal"><strong>Applied AI awareness</strong><span>Exploring useful AI adoption with attention to operational value, governance and hidden risk.</span></div>
         </div>
       </div>
     </section>
@@ -875,14 +949,28 @@
             <p class="eyebrow">Selected product work</p>
             <h2 id="products-title">Software built alongside delivery work.</h2>
           </div>
-          <p>I also build practical software through SynapseWorks, applying the same focus on workflow clarity, privacy and usability that informs my enterprise work.</p>
+          <p>One featured product and one secondary example demonstrate technical fluency and end-to-end ownership without displacing the enterprise-delivery focus.</p>
         </div>
         <div class="work-grid">
-          <article class="work-card">
-            <div class="work-meta"><span class="pill">Android</span><span class="pill">Privacy-first</span></div>
-            <h3>RME: PDF &amp; Document Scanner</h3>
-            <p>An open-source, privacy-first Android scanner with multilingual on-device OCR, full-library search, searchable PDFs, migration and portable backup.</p>
-            <div class="card-actions"><a class="btn btn-secondary" href="https://synapseworks.org/rme-pdf-scanner/" target="_blank" rel="noopener">View RME PDF Scanner</a></div>
+          <article class="work-card featured">
+            <div>
+              <div class="work-meta"><span class="pill">Android</span><span class="pill">Privacy-first</span><span class="pill">v1.7.0</span></div>
+              <h3>RME: PDF &amp; Document Scanner</h3>
+              <p>Built and shipped RME, an open-source, privacy-first Android document scanner demonstrating end-to-end product ownership across requirements, architecture, release, documentation, privacy and support. Live on Google Play; current release v1.7.0.</p>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://synapseworks.org/rme-pdf-scanner/" target="_blank" rel="noopener">View RME product page</a>
+                <a class="btn btn-text" href="https://play.google.com/store/apps/details?id=org.synapseworks.pageharbor" target="_blank" rel="noopener">Google Play</a>
+                <a class="btn btn-text" href="https://github.com/lucianRME/rme-pdf-scanner" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+            <aside class="product-proof" aria-label="RME ownership evidence">
+              <strong>Ownership demonstrated</strong>
+              <ul>
+                <li>Product requirements through release</li>
+                <li>Architecture and privacy decisions</li>
+                <li>Documentation and user support</li>
+              </ul>
+            </aside>
           </article>
           <article class="work-card">
             <div class="work-meta"><span class="pill">Chrome extension</span><span class="pill">Workflow safeguard</span></div>
@@ -930,7 +1018,7 @@
         <div class="contact-panel">
           <div>
             <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Connect.</h2>
+            <h2 id="contact-title">Discuss technology delivery.</h2>
             <p>
               I&rsquo;m interested in thoughtful conversations about technology delivery, enterprise platforms, AI adoption and product building.
             </p>
@@ -938,7 +1026,7 @@
           <div class="contact-actions">
             <a class="btn btn-secondary" href="https://www.linkedin.com/in/lucianirimie/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn btn-primary" href="mailto:contact@lucianirimie.com">
-              Contact
+              Discuss technology delivery
             </a>
           </div>
         </div>
@@ -954,14 +1042,27 @@
         <a href="#main" class="footer-link">Back to top</a>
       </div>
       <div class="footer-note">
-        <span>This site uses privacy-friendly analytics via Cloudflare Zaraz.</span>
+        <span>Analytics are used only with your consent.</span>
         <a href="/privacy/">See Privacy</a>
+        <button class="footer-button" id="cookie-settings" type="button" hidden>Cookie choices</button>
       </div>
     </div>
   </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const cookieSettings = document.getElementById('cookie-settings');
+
+    function enableCookieSettings() {
+      if (window.zaraz && typeof window.zaraz.showConsentModal === 'function') {
+        cookieSettings.hidden = false;
+      }
+    }
+
+    enableCookieSettings();
+    document.addEventListener('zarazConsentAPIReady', enableCookieSettings);
+    cookieSettings.addEventListener('click', () => window.zaraz.showConsentModal());
   </script>
 </body>
 </html>
