@@ -1,0 +1,3 @@
+# Local visual QA report; the review summary and screenshots live in .github/review/.
+/design-qa.md
+__pycache__/
