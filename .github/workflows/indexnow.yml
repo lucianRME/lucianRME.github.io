@@ -1,0 +1,108 @@
+name: IndexNow after GitHub Pages deployment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: indexnow-personal-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test IndexNow URL selection and site invariants
+        run: node --test tools/indexnow.test.mjs
+
+  notify:
+    needs: test
+    if: github.repository == 'lucianRME/lucianRME.github.io' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout history for changed-page selection
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Determine changed canonical URLs
+        id: changed
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          node tools/indexnow-changed-urls.mjs "$BEFORE_SHA" "$AFTER_SHA" > "$RUNNER_TEMP/indexnow-urls.txt"
+          if [[ -s "$RUNNER_TEMP/indexnow-urls.txt" ]]; then
+            echo "has_urls=true" >> "$GITHUB_OUTPUT"
+            cat "$RUNNER_TEMP/indexnow-urls.txt"
+          else
+            echo "has_urls=false" >> "$GITHUB_OUTPUT"
+            echo "No canonical page changes to notify."
+          fi
+
+      - name: Wait for this commit's successful GitHub Pages deployment
+        if: steps.changed.outputs.has_urls == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          for attempt in $(seq 1 60); do
+            result="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$GITHUB_SHA&per_page=100" \
+              --jq '[.workflow_runs[] | select(.name == "pages build and deployment") | .conclusion] | last // ""')"
+            case "$result" in
+              success)
+                echo "GitHub Pages deployment succeeded for $GITHUB_SHA"
+                exit 0
+                ;;
+              failure|cancelled|timed_out|action_required)
+                echo "::error::GitHub Pages deployment failed: $result"
+                exit 1
+                ;;
+            esac
+            sleep 10
+          done
+          echo "::error::No successful GitHub Pages deployment confirmed for $GITHUB_SHA"
+          exit 1
+
+      - name: Verify the production IndexNow key file
+        if: steps.changed.outputs.has_urls == 'true'
+        shell: bash
+        run: |
+          key="a0d400221a9ba4b739c3e61bf38bc4a6"
+          for attempt in $(seq 1 15); do
+            actual="$(curl -fsSL --max-time 15 "https://www.lucianirimie.com/${key}.txt?revision=${GITHUB_SHA}" 2>/dev/null || true)"
+            if [[ "$actual" == "$key" ]]; then
+              echo "Domain-specific verification key is live on the canonical host."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::IndexNow key not yet available from production."
+          exit 1
+
+      - name: Notify IndexNow participants
+        if: steps.changed.outputs.has_urls == 'true'
+        shell: bash
+        run: |
+          mapfile -t urls < "$RUNNER_TEMP/indexnow-urls.txt"
+          node tools/indexnow-submit.mjs "${urls[@]}"
